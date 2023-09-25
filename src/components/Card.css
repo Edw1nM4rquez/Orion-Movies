@@ -8,5 +8,17 @@
 
 .title-card {
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
+    color: var(--awb-custom_color)
+}
+
+.img-movie{
+    text-align: center;
+}
+
+.img-movie > img{
+    width: auto;
+    height: 28vh;
+    background-size: cover;
+    background-position: center;
 }
