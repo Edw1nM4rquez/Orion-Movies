@@ -1,7 +1,7 @@
 import './Footer.css'
 
 function FooterInformation() {
-    const information  = [
+    const sectionInformation  = [
         {
             title: 'Plataform',
             content: ['About Us', 'Trailers']
@@ -18,14 +18,14 @@ function FooterInformation() {
     ]
     return (
         <>
-            {information.map((item, index) => (
-                <div key={index} className="company">
+            {sectionInformation.map((item, index) => (
+                <div  className="company">
                     <div className="title">
-                        <h2>{item.title}</h2>
+                        <h3 key={index+'i1'}>{item.title}</h3>
                     </div>
-                    {item.content.map((item2, index) => (
+                    {item.content.map((item2, index2) => (
                         <div className="contenCompany">
-                            <span>
+                            <span key={index2+'i2'}>
                                 {item2}
                             </span>
                         </div>

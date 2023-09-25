@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {Button} from './button';
+import { Button } from './button';
 import './Navbar.css';
 function Navbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
-    const handleClick = ()=> setClick(!click);
-    const closeMobileMenu = ()=> setClick(false);
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
-    const showButton = ()=> {
-        if(window.innerWidth <= 960){
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
             setButton(false);
-        }else{
+        } else {
             setButton(true);
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         showButton();
     }, []);
 
@@ -27,12 +27,12 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
-                        Travel to Ecuador <i className=" fab fa-typo3"/>
+                        Orion Movies <i className=" fas fa-film" />
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
-                        <i className={click ? "fas fa-times":'fas fa-bars'}></i>
+                        <i className={click ? "fas fa-times" : 'fas fa-bars'}></i>
                     </div>
-                    <ul className={click ? 'nav-menu active':'nav-menu'}>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item">
                             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                                 Home
@@ -40,12 +40,12 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
-                                Services
+                                Trailers
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/products" className="nav-links" onClick={closeMobileMenu}>
-                                Productos
+                                About Us
                             </Link>
                         </li>
                         <li className="nav-item">

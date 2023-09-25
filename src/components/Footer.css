@@ -16,14 +16,14 @@
  width: 80%;
 }
 
-.title > h2{
-    font-size:15px;
+.title > h3{
+    font-size:20px;
     color: var(--white);
 }
 
 .contenCompany > span{
     color: var(--white);
-    font-size:10px;
+    font-size:15px;
 }
 
 .contenCompany{
@@ -41,6 +41,7 @@
 
 .copyright{
     margin: 0.5em;
+    text-align: center;
 }
 
 .copyright > span{
