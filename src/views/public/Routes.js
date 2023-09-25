@@ -1,8 +1,8 @@
 import Home from './Home'
 
-    const routes = [
+    const routesPublic = [
         {path: '/', element:<Home></Home>}
     ];
     
 
-export default routes;
+export default routesPublic;
