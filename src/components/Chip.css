@@ -1,0 +1,17 @@
+.button-chip{
+    margin: 1em;
+    background-color:var(--awb-custom_color);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.button-chip:hover{
+    margin: 1em;
+    background-color:white;
+    color: var(--awb-custom_color);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid var(--awb-custom_color);
+}

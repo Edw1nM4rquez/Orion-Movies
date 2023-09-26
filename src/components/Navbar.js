@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './button';
 import './Navbar.css';
-//import { useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
-    //const navigate = useNavigate();
-
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -27,8 +24,6 @@ function Navbar() {
     }, []);
 
     window.addEventListener('resize', showButton);
-
-
 
     return (
         <>
