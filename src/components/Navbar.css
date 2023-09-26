@@ -166,3 +166,10 @@
       transition: 250ms;
     }
   }
+
+  .buttons-interaction{
+    display: flex;
+    gap: 5px;
+  }
+
+

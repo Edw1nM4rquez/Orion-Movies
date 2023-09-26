@@ -12,7 +12,9 @@ body{
   margin: 0px;
 }
 
-*{
+:root{
   --awb-custom_color: #103c6b;
   --awb-custom_color_transparent: #103c6b9c;
+  font-family: 'PT Serif', serif;
 }
+

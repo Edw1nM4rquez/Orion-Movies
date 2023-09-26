@@ -1,0 +1,25 @@
+{
+    "users" :[
+        {
+
+            "id": 1,
+            "nombre":"Edwin Marquez"
+        },
+        {
+
+            "id": 2,
+            "nombre":"Cristian Fernandio"
+        }
+    ]
+    ,
+    "movies":[
+        {
+            "id":1,
+            "name":"Hachico"
+        },
+        {
+            "id":2,
+            "name":"Xmen"
+        }
+    ]
+}

@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './button';
 import './Navbar.css';
+//import { useNavigate } from 'react-router-dom';
+
+
 function Navbar() {
+    //const navigate = useNavigate();
+
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -22,6 +27,9 @@ function Navbar() {
     }, []);
 
     window.addEventListener('resize', showButton);
+
+
+
     return (
         <>
             <nav className="navbar">
@@ -53,8 +61,14 @@ function Navbar() {
                                 Sign Up
                             </Link>
                         </li>
+                       
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>Sign Up</Button>}
+                    <div className="buttons-interaction">
+                    {button && <Button buttonStyle='btn--outline' urlNavigate={'/sign-up'} >Sign Up</Button>}
+                    {button && <Button buttonStyle='btn--outline' urlNavigate={'/login'} >login</Button>}
+                    
+                    </div>
+                    
                 </div>
             </nav>
         </>
