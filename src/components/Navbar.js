@@ -65,7 +65,7 @@ function Navbar() {
                     </ul>
                     <div className="buttons-interaction">
                     {button && <Button buttonStyle='btn--outline' urlNavigate={'/sign-up'} >Sign Up</Button>}
-                    {button && <Button buttonStyle='btn--outline' urlNavigate={'/login'} >login</Button>}
+                    {button && <Button buttonStyle='btn--outline' urlNavigate={'/login'} >Login</Button>}
                     
                     </div>
                     

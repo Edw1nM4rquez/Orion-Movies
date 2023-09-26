@@ -2,13 +2,13 @@
     border: 2em;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 35vh;
-    height: 40vh;
+    height: 42vh;
     margin: 1em;
 }
 
 .title-card {
     text-align: center;
-    padding: 0.5em;
+    padding: 0.1em;
     color: var(--awb-custom_color)
 }
 
@@ -18,7 +18,13 @@
 
 .img-movie > img{
     width: auto;
+    max-width: 100%;
     height: 28vh;
     background-size: cover;
     background-position: center;
+}
+
+.genero{
+    text-align: center;
+    color: rgba(128, 128, 128, 0.775);
 }

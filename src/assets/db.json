@@ -1,25 +1,245 @@
 {
-    "users" :[
+    "users": [
         {
-
-            "id": 1,
-            "nombre":"Edwin Marquez"
+            "id": "adminuser",
+            "name": "Nihira",
+            "password": "admin",
+            "email": "nihiratechiees@gmail.com",
+            "phone": "8989898989",
+            "country": "usa",
+            "address": "",
+            "role": "admin",
+            "gender": "female"
         },
         {
-
-            "id": 2,
-            "nombre":"Cristian Fernandio"
+            "id": "ntuser",
+            "name": "Fullname",
+            "password": "ntuser",
+            "email": "email@email.com",
+            "phone": "56778889989",
+            "country": "singapore",
+            "address": "address1\naddrees2",
+            "role": "user",
+            "gender": "male"
         }
-    ]
-    ,
-    "movies":[
+    ],
+    "movies": [
         {
             "id":1,
-            "name":"Hachico"
+            "titulo": "Aventuras en la selva",
+            "calificacion": 8.2,
+            "genero": "Aventura",
+            "reparto": [
+                "John Doe",
+                "Jane Smith",
+                "Alice Johnson"
+            ],
+            "equipo": [
+                "Director: David Directorson",
+                "Guionista: Emily Writerwoman",
+                "Productor: Peter Producerson"
+            ],
+            "fecha_estreno": "2023-02-15",
+            "imagen_previsualizacion":"https://is3-ssl.mzstatic.com/image/thumb/mSwpeFjCE3ijyjJNteQUfA/1200x675mf.jpg"
         },
         {
             "id":2,
-            "name":"Xmen"
+            "titulo": "El misterio del pasado",
+            "calificacion": 7.5,
+            "genero": "Misterio",
+            "reparto": [
+                "Samuel Mysteryman",
+                "Eva Enigma",
+                "Oliver Puzzles"
+            ],
+            "equipo": [
+                "Director: Mystery Master",
+                "Guionista: Riddle Solver",
+                "Productor: Enigmatic Productions"
+            ],
+            "fecha_estreno": "2023-04-20",
+            "imagen_previsualizacion":"https://pics.filmaffinity.com/Misterios_del_pasado-424467743-large.jpg"
+        },
+        {
+            "id":3,
+            "titulo": "Romance en París",
+            "calificacion": 6.8,
+            "genero": "Romance",
+            "reparto": [
+                "Lucas Lover",
+                "Sophia Sweetheart",
+                "Olivia Amour"
+            ],
+            "equipo": [
+                "Director: Amour Director",
+                "Guionista: Romance Writer",
+                "Productor: Love Productions"
+            ],
+            "fecha_estreno": "2023-06-10",
+            "imagen_previsualizacion":"https://erratanaturae.com/nouveau/wp-content/uploads/2020/05/Portada-romance-en-paris1.jpg"
+        },
+        {
+            "id":4,
+            "titulo": "Acción extrema",
+            "calificacion": 7.9,
+            "genero": "Acción",
+            "reparto": [
+                "Jack Actionman",
+                "Linda Dynamite",
+                "Mike Gunfire"
+            ],
+            "equipo": [
+                "Director: Action Jackson",
+                "Guionista: Explosive Writer",
+                "Productor: Action Productions"
+            ],
+            "fecha_estreno": "2023-08-05",
+            "imagen_previsualizacion":"https://mx.web.img2.acsta.net/pictures/22/12/30/19/55/5046118.jpg"
+        },
+        {
+            "id":5,
+            "titulo": "Comedia de locos",
+            "calificacion": 7.0,
+            "genero": "Comedia",
+            "reparto": [
+                "Tom Laughter",
+                "Samantha Chuckles",
+                "Ben Jokes"
+            ],
+            "equipo": [
+                "Director: Chuck Comedy",
+                "Guionista: Funny Writer",
+                "Productor: Laughter Productions"
+            ],
+            "fecha_estreno": "2023-10-15",
+            "imagen_previsualizacion":"https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/08/noche-locos-2041139.jpg?tf=1200x"
+        },
+        {
+            "id":6,
+            "titulo": "Drama familiar",
+            "calificacion": 8.5,
+            "genero": "Drama",
+            "reparto": [
+                "Emma Emotions",
+                "Michael Tears",
+                "Sophie Struggles"
+            ],
+            "equipo": [
+                "Director: Drama King",
+                "Guionista: Emotional Writer",
+                "Productor: Family Productions"
+            ],
+            "fecha_estreno": "2023-12-02",
+            "imagen_previsualizacion":"https://static.wikia.nocookie.net/drama/images/0/05/My_Unfamiliar_Family-tvN-2020-01.jpg/revision/latest/scale-to-width-down/250?cb=20200417112039&path-prefix=es"
+        },
+        {
+            "id":7,
+            "titulo": "Ciencia ficción: El viaje a Marte",
+            "calificacion": 9.0,
+            "genero": "Ciencia ficción",
+            "reparto": [
+                "Alex Astronaut",
+                "Eva Explorer",
+                "Max Martian"
+            ],
+            "equipo": [
+                "Director: Space Director",
+                "Guionista: Sci-Fi Writer",
+                "Productor: Space Productions"
+            ],
+            "fecha_estreno": "2024-02-18",
+            "imagen_previsualizacion":"https://www.latercera.com/resizer/cfenujqZCgcQcQGEXfPGCFggYgE=/800x0/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/UCBTPORHA5CM5NFDMHJBUUYKA4.jpg"
+        },
+        {
+            "id":8,
+            "titulo": "Terror en la mansión",
+            "calificacion": 7.7,
+            "genero": "Terror",
+            "reparto": [
+                "Emily Fear",
+                "Daniel Dread",
+                "Sophia Spooks"
+            ],
+            "equipo": [
+                "Director: Horror Master",
+                "Guionista: Frightening Writer",
+                "Productor: Horror Productions"
+            ],
+            "fecha_estreno": "2024-04-09",
+            "imagen_previsualizacion":"https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/321/original/portada_la-mansion-del-terror_raul-de-tomas_202007231043.jpg"
+        },
+        {
+            "id":9,
+            "titulo": "Historia épica: La conquista",
+            "calificacion": 8.8,
+            "genero": "Épica",
+            "reparto": [
+                "William Conqueror",
+                "Isabella Empress",
+                "Richard Warrior"
+            ],
+            "equipo": [
+                "Director: Epic Director",
+                "Guionista: Epic Writer",
+                "Productor: Epic Productions"
+            ],
+            "fecha_estreno": "2024-06-25",
+            "imagen_previsualizacion":"https://www.polifemo.com/static/img/portadas/_visd_0000JPG020OO.jpg"
+        },
+        {
+            "id":10,
+            "titulo": "Animación: Aventuras en el bosque",
+            "calificacion": 8.0,
+            "genero": "Animación",
+            "reparto": [
+                "Animación A. Personaje",
+                "Animación B. Personaje",
+                "Animación C. Personaje"
+            ],
+            "equipo": [
+                "Director: Animation Master",
+                "Guionista: Animated Writer",
+                "Productor: Animation Productions"
+            ],
+            "fecha_estreno": "2024-08-12",
+            "imagen_previsualizacion":"https://img.freepik.com/vector-premium/dibujos-animados-nino-nina-scout-caminando-bosque_43633-10614.jpg"
+        },
+        {
+            "id":11,
+            "titulo": "Comedia romántica: Amor en la ciudad",
+            "calificacion": 7.4,
+            "genero": "Comedia romántica",
+            "reparto": [
+                "John Romance",
+                "Sarah Sweetheart",
+                "David Date"
+            ],
+            "equipo": [
+                "Director: Romantic Comedy Director",
+                "Guionista: Love-Struck Writer",
+                "Productor: Romantic Productions"
+            ],
+            "fecha_estreno": "2024-10-30",
+            "imagen_previsualizacion":"https://pics.filmaffinity.com/Amor_en_la_ciudad_Miniserie_de_TV-823137441-large.jpg"
+        },
+        {
+            "id":12,
+            "titulo": "Aventuras espaciales: El explorador",
+            "calificacion": 8.3,
+            "genero": "Aventura espacial",
+            "reparto": [
+                "Astronauta A. Explorer",
+                "Astronauta B. Explorer",
+                "Astronauta C. Explorer"
+            ],
+            "equipo": [
+                "Director: Space Adventure Director",
+                "Guionista: Space Explorer Writer",
+                "Productor: Space Adventure Productions"
+            ],
+            "fecha_estreno": "2025-01-15",
+            "imagen_previsualizacion":"https://m.media-amazon.com/images/I/51ORKopDhgL._AC_SY580_.jpg"
         }
+   
     ]
 }

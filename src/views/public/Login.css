@@ -18,7 +18,10 @@
     align-items: center;
     justify-content: center;
 }
-
+.form-style{
+    width: 100%;
+    margin: 5em;
+}
 .form {
     margin: 1em;
  
@@ -31,10 +34,18 @@
 
 .form>input {
     height: 25px;
-    width: 120%;
-    border: 2px solid white;
+    width: 100%;
+    
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 15px;
+}
+
+.border-white {
+    border: 2px solid white;
+}
+
+.border-danger {
+    border: 2px solid red;
 }
 .Title{
     position: absolute;

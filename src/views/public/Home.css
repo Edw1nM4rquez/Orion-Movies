@@ -5,3 +5,7 @@
     margin: 1em;
     color: var(--awb-custom_color_transparent);
 }
+.content-movies{
+    display: flex;
+    flex-wrap: wrap;
+}
