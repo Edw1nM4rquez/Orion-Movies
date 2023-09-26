@@ -1,6 +1,7 @@
 import "./Home.css";
 import Card from "../../components/Card";
 import { useEffect, useState } from "react";
+
 function HeaderHome() {
   return (
     <div className="principal-title">
@@ -25,6 +26,7 @@ function Home() {
   return (
     <>
       <HeaderHome></HeaderHome>
+      <div className="web-view-movies"></div>
       <div className="content-movies">
         {data.map((item, key) => (
           <Card
