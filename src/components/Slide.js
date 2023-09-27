@@ -1,19 +1,28 @@
-import { useState } from "react";
+
 import "./Slide.css";
-function CategoryFilter({filterCategoryData}) {
-  const [optionRadio, setOptionRadio] = useState('');
+function CategoryFilter({
+  filterCategoryData,
+  nameGenderUse,
+  setNameGenderUse,
+}) {
+  //const [optionRadio, setOptionRadio] = useState('');
 
   return (
     <>
       <div className="category-filter">
-        <h3>Filter Category</h3>
+        <h3>Filter Gender</h3>
         <div className="form-radio">
           <input
             type="radio"
             id="adventure"
-            onChange={ (e) => {setOptionRadio(e.target.value) ; filterCategoryData(e.target.value);}}
-            value="Aventura"
-            checked={optionRadio === "Aventura"}
+            onChange={(e) => {
+              setNameGenderUse(e.target.value);
+              filterCategoryData(e.target.value);
+            }}
+            value="Adventure"
+            checked={
+              nameGenderUse === "Adventure" && nameGenderUse === "Adventure"
+            }
           />
           <label htmlFor="adventure">Adventure</label>
         </div>
@@ -23,8 +32,11 @@ function CategoryFilter({filterCategoryData}) {
             id="romance"
             name="romance"
             value="Romance"
-            onChange={ (e) => {setOptionRadio(e.target.value) ; filterCategoryData(e.target.value);}}
-            checked={optionRadio === "Romance"}
+            onChange={(e) => {
+              setNameGenderUse(e.target.value);
+              filterCategoryData(e.target.value);
+            }}
+            checked={nameGenderUse === "Romance"}
           />
           <label htmlFor="romance">Romance</label>
         </div>
@@ -33,18 +45,30 @@ function CategoryFilter({filterCategoryData}) {
             type="radio"
             id="mistery"
             name="mistery"
-            value="Misterio"
-            onChange={ (e) => {setOptionRadio(e.target.value) ; filterCategoryData(e.target.value);}}
-            checked={optionRadio === "Misterio"}
+            value="Mystery"
+            onChange={(e) => {
+              setNameGenderUse(e.target.value);
+              filterCategoryData(e.target.value);
+            }}
+            checked={nameGenderUse === "Mystery"}
           />
-          <label htmlFor="mistery">Mistery</label>
+          <label htmlFor="mistery">Mystery</label>
         </div>
       </div>
     </>
   );
 }
 
-function SlideInputSearch({ setSearch, search, setauxData, data, filterData ,filterCategoryData}) {
+function SlideInputSearch({
+  setSearch,
+  search,
+  setauxData,
+  dataMovies,
+  filterData,
+  filterCategoryData,
+  nameGenderUse,
+  setNameGenderUse,
+}) {
   return (
     <>
       <div className="Search">
@@ -57,7 +81,7 @@ function SlideInputSearch({ setSearch, search, setauxData, data, filterData ,fil
           onChange={(e) => {
             setSearch(e.target.value);
             if (e.target.value === "") {
-              setauxData(data);
+              setauxData(dataMovies);
             }
           }}
         ></input>
@@ -67,7 +91,11 @@ function SlideInputSearch({ setSearch, search, setauxData, data, filterData ,fil
         </button>
       </div>
       <div className="category">
-        <CategoryFilter filterCategoryData={filterCategoryData}></CategoryFilter>
+        <CategoryFilter
+          filterCategoryData={filterCategoryData}
+          nameGenderUse={nameGenderUse}
+          setNameGenderUse={setNameGenderUse}
+        ></CategoryFilter>
       </div>
     </>
   );
