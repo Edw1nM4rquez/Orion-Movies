@@ -6,17 +6,18 @@
 }
 
 .container-login>h2 {
-    color: white;
+    color: var(--awb-custom_color);
     position: absolute;
 }
 
 
 .form-login {
-    background: var(--awb-custom_color);
+    background: white;
     display: flex;
     width: 50%;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .form-style{
     width: 100%;
@@ -29,23 +30,33 @@
 
 .form>label {
     margin: 1em;
-    color: white;
+    color:  var(--awb-custom_color);
 }
 
 .form>input {
+    text-align: center;
     height: 25px;
     width: 100%;
-    
+    border: 2px solid var(--awb-custom_color_transparent);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 15px;
+    border-radius: 5px;
+}
+
+.form>select {
+    text-align: center;
+    height: 25px;
+    width: 100%;
+    border: 2px solid var(--awb-custom_color_transparent);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
 }
 
 .border-white {
-    border: 2px solid white;
+    border: 2px solid var(--awb-custom_color_transparent) !important;
 }
 
 .border-danger {
-    border: 2px solid red;
+    border: 2px solid red !important;
 }
 .Title{
     position: absolute;
@@ -53,14 +64,14 @@
 }
 .Title>i{
     font-size:60px;
-    color: #fff;
+    color: var(--awb-custom_color);
 }
 
 .login-button{
     padding: 0.5em;
     width: 8em;
     border-radius:15px;
-    border: 1px solid transparent;
+    border: 1px solid var(--awb-custom_color);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

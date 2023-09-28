@@ -1,6 +1,8 @@
+
 .container {
     min-height: 70vh;
     text-align: -webkit-center; 
+    padding-bottom:4em;
 }
 
 .table-body>tr:nth-of-type(odd) {
@@ -59,8 +61,9 @@
 
 .form > textarea{
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 2px solid var(--awb-custom_color);
 }
 
 .image-view > img {
@@ -71,4 +74,19 @@
 .form-style-register{
     display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.modal-buttons{
+    gap: 10px;
+    display: flex;
+}
+.modal-footer{
+    justify-content: end;
+    display: flex;
+}
+
+.button-new-movie{
+    text-align:end;
+    margin: 2em;
+    width: 90%;
 }

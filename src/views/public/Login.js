@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.css";
 import toast, { Toaster } from 'react-hot-toast';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ValidateForm(username, password) {
   let result = true;
@@ -41,7 +41,6 @@ function Login() {
       fetch("http://localhost:3000/users/" + username).then((res) => {
         return res.json();
       }).then((resp) => {
-        //console.log(resp)
         if (Object.keys(resp).length === 0) {
           toast.error('Please Enter valid username');
         } else {
@@ -79,7 +78,7 @@ function Login() {
                   type="text"
 
                 />
-                {(isInvalidForm === false && username === '') && <span style={{ color: 'red' }}> Campo Obligatorio </span>}
+                {(isInvalidForm === false && username === '') && <span style={{ color: 'red' }}> Obligatory field </span>}
               </div>
               <div className="form">
                 <label htmlFor="passw">Password:</label>
@@ -89,7 +88,7 @@ function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                 />
-                {(isInvalidForm === false && password === '') && <span style={{ color: 'red' }}> Campo Obligatorio </span>}
+                {(isInvalidForm === false && password === '') && <span style={{ color: 'red' }}> Obligatory field </span>}
               </div>
               <div className="button-form">
                 <button className="login-button" type="submit">

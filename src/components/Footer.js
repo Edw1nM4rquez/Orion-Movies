@@ -19,13 +19,13 @@ function FooterInformation() {
     return (
         <>
             {sectionInformation.map((item, index) => (
-                <div className="company">
+                <div className="company" key={index}>
                     <div className="title">
-                        <h3 key={index + 'i1'}>{item.title}</h3>
+                        <h3>{item.title}</h3>
                     </div>
                     {item.content.map((item2, index2) => (
-                        <div className="contenCompany">
-                            <span key={index2 + 'i2'}>
+                        <div className="contenCompany" key={index2}>
+                            <span>
                                 {item2}
                             </span>
                         </div>

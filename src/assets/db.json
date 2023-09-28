@@ -1,234 +1,247 @@
 {
-    "users": [
-        {
-            "id": "adminuser",
-            "name": "Nihira",
-            "password": "admin",
-            "email": "nihiratechiees@gmail.com",
-            "phone": "8989898989",
-            "country": "usa",
-            "address": "",
-            "role": "admin",
-            "gender": "female"
-        },
-        {
-            "id": "ntuser",
-            "name": "Fullname",
-            "password": "ntuser",
-            "email": "email@email.com",
-            "phone": "56778889989",
-            "country": "singapore",
-            "address": "address1\naddrees2",
-            "role": "user",
-            "gender": "male"
-        }
-    ],
-    "movies": [
-        {
-            "id": 1,
-            "title": "Jungle Adventures",
-            "rating": 8.2,
-            "genre": {
-                "id": 2,
-                "name": "Adverture"
-            },
-            "cast": "John Doe, Jane Smith, Alice Johnson",
-            "team": "Director: David Directorson, Screenwriter: Emily Writerwoman, Producer: Peter Producerson",
-            "release_date": "2023-02-15",
-            "preview_image": "https://is3-ssl.mzstatic.com/image/thumb/mSwpeFjCE3ijyjJNteQUfA/1200x675mf.jpg"
-        },
-        {
-            "id": 2,
-            "title": "The Mystery of the Past",
-            "rating": 7.5,
-            "genre": {
-                "id": 8,
-                "name": "Mystery"
-            },
-            "cast": "Samuel Mysteryman, Eva Enigma, Oliver Puzzles",
-            "team": "Director: Mystery Master , Writer: Riddle Solver ,Producer: Enigmatic Productions",
-            "release_date": "2023-04-20",
-            "preview_image": "https://pics.filmaffinity.com/Misterios_del_pasado-424467743-large.jpg"
-        },
-        {
-            "id": 3,
-            "title": "Romance in Paris",
-            "rating": 6.8,
-            "genre": {
-                "id": 9,
-                "name": "Romance"
-            },
-            "cast": "Lucas Lover, Sophia Sweetheart, Olivia Amour",
-            "team": "Director: Amour Director, Screenwriter: Romance Writer, Producer: Love Productions",
-            "release_date": "2023-06-10",
-            "preview_image": "https://erratanaturae.com/nouveau/wp-content/uploads/2020/05/Portada-romance-en-paris1.jpg"
-        },
-        {
-            "id": 4,
-            "title": "Extreme Action",
-            "rating": 7.9,
-            "genre": {
-                "id": 1,
-                "name": "Action"
-            },
-            "cast": "Jack Actionman,Linda Dynamite,Mike Gunfire",
-            "team": "Director: Action Jackson, Screenwriter: Explosive Writer, Producer: Action Productions",
-            "release_date": "2023-08-05",
-            "preview_image": "https://mx.web.img2.acsta.net/pictures/22/12/30/19/55/5046118.jpg"
-        },
-        {
-            "id": 5,
-            "title": "Comedy of madmen",
-            "rating": 7.0,
-            "genre": {
-                "id": 4,
-                "name": "Comedy"
-            },
-            "cast": "Tom Laughter,Samantha Chuckles,Ben Jokes",
-            "team": "Director: Chuck Comedy, Screenwriter: Funny Writer, Producer: Laughter Productions",
-            "release_date": "2023-10-15",
-            "preview_image": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/08/noche-locos-2041139.jpg?tf=1200x"
-        },
-        {
-            "id": 6,
-            "title": "Family drama",
-            "rating": 8.5,
-            "genre": {
-                "id": 5,
-                "name": "Drama"
-            },
-            "cast": "Emma Emociones, Michael Lágrimas, Sophie Luchas",
-            "team": "Director: Drama King, Screenwriter: Emotional Writer, Producer: Family Productions",
-            "release_date": "2023-12-02",
-            "preview_image": "https://static.wikia.nocookie.net/drama/images/0/05/My_Unfamiliar_Family-tvN-2020-01.jpg/revision/latest/scale-to-width-down/250?cb =20200417112039&path-prefix=en"
-        },
-        {
-            "id": 7,
-            "title": "Science Fiction: The Journey to Mars",
-            "rating": 9.0,
-            "genre": {
-                "id": 11,
-                "name": "Science fiction"
-            },
-            "cast": "Alex Astronaut, Eva Explorer, Max Martian",
-            "team": "Director: Space Director, Screenwriter: Sci-Fi Writer, Producer: Space Productions",
-            "release_date": "2024-02-18",
-            "preview_image": "https://www.latercera.com/resizer/cfenujqZCgcQcQGEXfPGCFggYgE=/800x0/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/UCBTPORHA5CM5NFDMHJBUUYKA4.jpg"
-        },
-        {
-            "id": 8,
-            "title": "Terror in the mansion",
-            "rating": 7.7,
-            "genre": {
-                "id": 7,
-                "name": "Horror"
-            },
-            "cast": "Emily Fear, Daniel Dread, Sophia Spooks",
-            "team": "Director: Horror Master, Screenwriter: Frightening Writer, Producer: Horror Productions",
-            "release_date": "2024-04-09",
-            "preview_image": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/321/original/portada_la-mansion-del-terror_raul-de-tomas_202007231043.jpg"
-        },
-        {
-            "id": 9,
-            "title": "Epic Story: The Conquest",
-            "rating": 8.8,
-            "genre": {
-                "id": 6,
-                "name": "Epic"
-            },
-            "cast": "William Conqueror, Isabella Empress, Richard Warrior",
-            "team": "Director: Epic Director, Screenwriter: Epic Writer, Producer: Epic Productions",
-            "release_date": "2024-06-25",
-            "preview_image": "https://www.polifemo.com/static/img/portadas/_visd_0000JPG020OO.jpg"
-        },
-        {
-            "id": 10,
-            "title": "Animation: Adventures in the forest",
-            "rating": 8.0,
-            "genre": {
-                "id": 3,
-                "name": "Animation"
-            },
-            "cast": "Animation A. Character,Animation B. Character,Animation C. Character",
-            "team": "Director: Animation Master, Screenwriter: Animated Writer, Producer: Animation Productions",
-            "release_date": "2024-08-12",
-            "preview_image": "https://img.freepik.com/vector-premium/dibujos-animados-nino-nina-scout-caminando-bosque_43633-10614.jpg"
-        },
-        {
-            "id": 11,
-            "title": "Romantic comedy: Love in the city",
-            "rating": 7.4,
-            "genre": {
-                "id": 10,
-                "name": "Romantic comedy"
-            },
-            "cast": "John Romance, Sarah Sweetheart, David Date",
-            "team": "Director: Romantic Comedy Director, Screenwriter: Love-Struck Writer, Producer: Romantic Productions",
-            "release_date": "2024-10-30",
-            "preview_image": "https://pics.filmaffinity.com/Amor_en_la_ciudad_Miniserie_de_TV-823137441-large.jpg"
-        },
-        {
-            "id": 12,
-            "title": "Space Adventures: The Explorer",
-            "rating": 8.3,
-            "genre": {
-                "id": 11,
-                "name": "Space Adventure"
-            },
-            "cast": "Astronaut A. Explorer,Astronaut B. Explorer,Astronaut C. Explorer",
-            "team": "Director: Space Adventure Director, Screenwriter: Space Explorer Writer, Producer: Space Adventure Productions",
-            "release_date": "2025-01-15",
-            "image_preview": "https://m.media-amazon.com/images/I/51ORKopDhgL._AC_SY580_.jpg"
-        }
-    ],
-    "genre": [
-        {
-            "id": 1,
-            "name": "Action"
-        },
-        {
-            "id": 2,
-            "name": "Adverture"
-        },
-        {
-            "id": 3,
-            "name": "Animation"
-        },
-        {
-            "id": 4,
-            "name": "Comedy"
-        },
-        {
-            "id": 5,
-            "name": "Drama"
-        },
-        {
-            "id": 6,
-            "name": "Epic"
-        },
-        {
-            "id": 7,
-            "name": "Horror"
-        },
-        {
-            "id": 8,
-            "name": "Mystery"
-        },
-        {
-            "id": 9,
-            "name": "Romance"
-        },
-        {
-            "id": 10,
-            "name": "Romantic comedy"
-        },
-        {
-            "id": 11,
-            "name": "Science fiction"
-        },
-        {
-            "id": 11,
-            "name": "Space Adventure"
-        }
-    ]
+  "users": [
+    {
+      "id": "adminuser",
+      "name": "Nihira",
+      "password": "admin",
+      "email": "nihiratechiees@gmail.com",
+      "phone": "8989898989",
+      "country": "usa",
+      "address": "",
+      "role": "admin",
+      "gender": "female"
+    },
+    {
+      "id": "ntuser",
+      "name": "Fullname",
+      "password": "ntuser",
+      "email": "email@email.com",
+      "phone": "56778889989",
+      "country": "singapore",
+      "address": "address1\naddrees2",
+      "role": "user",
+      "gender": "male"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "Jungle Adventures",
+      "rating": 8.2,
+      "genre": {
+        "id": 2,
+        "name": "Adverture"
+      },
+      "cast": "John Doe, Jane Smith, Alice Johnson",
+      "team": "Director: David Directorson, Screenwriter: Emily Writerwoman, Producer: Peter Producerson",
+      "release_date": "2023-02-15",
+      "preview_image": "https://is3-ssl.mzstatic.com/image/thumb/mSwpeFjCE3ijyjJNteQUfA/1200x675mf.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Mystery of the Past",
+      "rating": 7.5,
+      "genre": {
+        "id": 8,
+        "name": "Mystery"
+      },
+      "cast": "Samuel Mysteryman, Eva Enigma, Oliver Puzzles",
+      "team": "Director: Mystery Master , Writer: Riddle Solver ,Producer: Enigmatic Productions",
+      "release_date": "2023-04-20",
+      "preview_image": "https://pics.filmaffinity.com/Misterios_del_pasado-424467743-large.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Romance in Paris",
+      "rating": 6.8,
+      "genre": {
+        "id": 9,
+        "name": "Romance"
+      },
+      "cast": "Lucas Lover, Sophia Sweetheart, Olivia Amour",
+      "team": "Director: Amour Director, Screenwriter: Romance Writer, Producer: Love Productions",
+      "release_date": "2023-06-10",
+      "preview_image": "https://erratanaturae.com/nouveau/wp-content/uploads/2020/05/Portada-romance-en-paris1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Extreme Action",
+      "rating": 7.9,
+      "genre": {
+        "id": 1,
+        "name": "Action"
+      },
+      "cast": "Jack Actionman,Linda Dynamite,Mike Gunfire",
+      "team": "Director: Action Jackson, Screenwriter: Explosive Writer, Producer: Action Productions",
+      "release_date": "2023-08-05",
+      "preview_image": "https://mx.web.img2.acsta.net/pictures/22/12/30/19/55/5046118.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Comedy of madmen",
+      "rating": 7,
+      "genre": {
+        "id": 4,
+        "name": "Comedy"
+      },
+      "cast": "Tom Laughter,Samantha Chuckles,Ben Jokes",
+      "team": "Director: Chuck Comedy, Screenwriter: Funny Writer, Producer: Laughter Productions",
+      "release_date": "2023-10-15",
+      "preview_image": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/08/noche-locos-2041139.jpg?tf=1200x"
+    },
+    {
+      "id": 6,
+      "title": "Family drama",
+      "rating": 8.5,
+      "genre": {
+        "id": 5,
+        "name": "Drama"
+      },
+      "cast": "Emma Emociones, Michael Lágrimas, Sophie Luchas",
+      "team": "Director: Drama King, Screenwriter: Emotional Writer, Producer: Family Productions",
+      "release_date": "2023-12-02",
+      "preview_image": "https://static.wikia.nocookie.net/drama/images/0/05/My_Unfamiliar_Family-tvN-2020-01.jpg/revision/latest/scale-to-width-down/250?cb =20200417112039&path-prefix=en"
+    },
+    {
+      "id": 7,
+      "title": "Science Fiction: The Journey to Mars",
+      "rating": 9,
+      "genre": {
+        "id": 11,
+        "name": "Science fiction"
+      },
+      "cast": "Alex Astronaut, Eva Explorer, Max Martian",
+      "team": "Director: Space Director, Screenwriter: Sci-Fi Writer, Producer: Space Productions",
+      "release_date": "2024-02-18",
+      "preview_image": "https://www.latercera.com/resizer/cfenujqZCgcQcQGEXfPGCFggYgE=/800x0/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/UCBTPORHA5CM5NFDMHJBUUYKA4.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Terror in the mansion",
+      "rating": 7.7,
+      "genre": {
+        "id": 7,
+        "name": "Horror"
+      },
+      "cast": "Emily Fear, Daniel Dread, Sophia Spooks",
+      "team": "Director: Horror Master, Screenwriter: Frightening Writer, Producer: Horror Productions",
+      "release_date": "2024-04-09",
+      "preview_image": "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/321/original/portada_la-mansion-del-terror_raul-de-tomas_202007231043.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Epic Story: The Conquest",
+      "rating": 8.8,
+      "genre": {
+        "id": 6,
+        "name": "Epic"
+      },
+      "cast": "William Conqueror, Isabella Empress, Richard Warrior",
+      "team": "Director: Epic Director, Screenwriter: Epic Writer, Producer: Epic Productions",
+      "release_date": "2024-06-25",
+      "preview_image": "https://www.polifemo.com/static/img/portadas/_visd_0000JPG020OO.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Animation: Adventures in the forest",
+      "rating": 8,
+      "genre": {
+        "id": 3,
+        "name": "Animation"
+      },
+      "cast": "Animation A. Character,Animation B. Character,Animation C. Character",
+      "team": "Director: Animation Master, Screenwriter: Animated Writer, Producer: Animation Productions",
+      "release_date": "2024-08-12",
+      "preview_image": "https://img.freepik.com/vector-premium/dibujos-animados-nino-nina-scout-caminando-bosque_43633-10614.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Romantic comedy: Love in the city",
+      "rating": 7.4,
+      "genre": {
+        "id": 10,
+        "name": "Romantic comedy"
+      },
+      "cast": "John Romance, Sarah Sweetheart, David Date",
+      "team": "Director: Romantic Comedy Director, Screenwriter: Love-Struck Writer, Producer: Romantic Productions",
+      "release_date": "2024-10-30",
+      "preview_image": "https://pics.filmaffinity.com/Amor_en_la_ciudad_Miniserie_de_TV-823137441-large.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Space Adventures: The Explorer",
+      "rating": 8.3,
+      "genre": {
+        "id": 11,
+        "name": "Space Adventure"
+      },
+      "cast": "Astronaut A. Explorer,Astronaut B. Explorer,Astronaut C. Explorer",
+      "team": "Director: Space Adventure Director, Screenwriter: Space Explorer Writer, Producer: Space Adventure Productions",
+      "release_date": "2025-01-15",
+      "image_preview": "https://m.media-amazon.com/images/I/51ORKopDhgL._AC_SY580_.jpg"
+    },
+    {
+      "title": "Avatar",
+      "release_date": "2023-09-06",
+      "rating": "10",
+      "cast": "Sam Worthington Zoe Saldaña Sigourney Weaver Michelle Rodríguez Stephen Lang Giovanni Ribisi Joel David Moore C. C. H. Pounder Wes Studi Laz Alonso",
+      "genre": {
+        "id": 11,
+        "name": "Science fiction"
+      },
+      "team": "James Cameron,Jon Landau, Rae Sanchini",
+      "preview_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Avatar-Logo-avatar.svg/300px-Avatar-Logo-avatar.svg.png",
+      "id": 13
+    }
+  ],
+  "genre": [
+    {
+      "id": 1,
+      "name": "Action"
+    },
+    {
+      "id": 2,
+      "name": "Adverture"
+    },
+    {
+      "id": 3,
+      "name": "Animation"
+    },
+    {
+      "id": 4,
+      "name": "Comedy"
+    },
+    {
+      "id": 5,
+      "name": "Drama"
+    },
+    {
+      "id": 6,
+      "name": "Epic"
+    },
+    {
+      "id": 7,
+      "name": "Horror"
+    },
+    {
+      "id": 8,
+      "name": "Mystery"
+    },
+    {
+      "id": 9,
+      "name": "Romance"
+    },
+    {
+      "id": 10,
+      "name": "Romantic comedy"
+    },
+    {
+      "id": 11,
+      "name": "Science fiction"
+    },
+    {
+      "id": 12,
+      "name": "Space Adventure"
+    }
+  ]
 }

@@ -16,10 +16,10 @@ function HeaderHome() {
 function sortArray(arr) {
   arr.sort((a, b) => {
       // Compara por género primero
-  if (a.genre < b.genre) {
+  if (a.genre.name < b.genre.name) {
     return -1;
   }
-  if (a.genre > b.genre) {
+  if (a.genre.name > b.genre.name) {
     return 1;
   }
 
@@ -106,6 +106,7 @@ function Home() {
           <div className="content-movies">
             {auxData.map((item, key) => (
               <Card
+                key={key}
                 title={item.title}
                 imgUrl={item.preview_image}
                 genero={item.genre.name}
