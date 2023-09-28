@@ -1,5 +1,6 @@
+import toast from "react-hot-toast";
 
-function TableMovie({ dataMovie, setMovieObject, setShowModal }) {
+function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
   const openModal = (id) => {
     const getMovieById = async () => {
       const apiMovie = await fetch("http://localhost:3000/movies/" + id);
@@ -8,6 +9,22 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal }) {
       setShowModal(true);
     };
     getMovieById();
+  };
+
+  const deleteMovie = (id) => {
+    fetch(`http://localhost:3000/movies/${id}`, {
+      method: "DELETE",
+      // body: JSON.stringify(''),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        toast.success("Delete successfully");
+        reqApiMovies();
+        setShowModal(false);
+      });
   };
   return (
     <>
@@ -46,7 +63,10 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal }) {
                 </button>
               </td>
               <td>
-                <button className="btn-delete">
+                <button
+                  className="btn-delete"
+                  onClick={(e) => deleteMovie(item.id)}
+                >
                   Delete <i className="fas fa-trash"></i>
                 </button>
               </td>

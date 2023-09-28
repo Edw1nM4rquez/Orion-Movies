@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "../../../components/Modal";
 import imageLogo from "../../../assets/img/img-icon.jpg";
-import toast from "react-hot-toast";
+import './FormViewMovie.css'
 import { useEffect } from "react";
 function AlertObligatoryField({ controlName, isInvalidForm }) {
   return (
@@ -28,13 +28,8 @@ function imageNullPath(path) {
   return path;
 }
 
-function validateFormTypeNUmber(controlName) {
-  let result = false;
-  controlName <= 0? (result= true) : (result=false);
-  return result;
-}
 
-function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
+function FormViewMovie({ characterApiMovie, setviewModal, viewModal }) {
   const [isInvalidForm, setInvalidForm] = useState();
 
   //Varibles para los atributos
@@ -63,53 +58,29 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
   }, []);
 
   const closeModal = () => {
-    setShowModal(false);
+    setviewModal(false);
   };
 
-  const updateMovie = () => {
-
-    if(validateFormTypeNUmber(rating) === true){
-      toast.error('Change value rating')
-      return;
-    }
-
-    if(isInvalidForm == true){
-      toast.error('Form is invalid');
-      return;
-    }
-
-    const movie = characterApiMovie;
-    movie.title = nameFilm;
-    movie.release_date = relaseDate;
-    movie.rating = rating;
-    movie.cast = cast;
-    movie.genre = genreArray.filter((res) => res.id == genre)[0];
-    movie.team = team;
-    movie.preview_image = imgMovie;
-    fetch(`http://localhost:3000/movies/${characterApiMovie.id}`, {
-      method: "PUT",
-      body: JSON.stringify(movie),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        toast.success("Updated successfully");
-      });
-  };
-
+  
   return (
     <>
       <Modal
         closeModal={closeModal}
-        showModal={showModal}
-        titleModal={"Edit Movie"}
+        showModal={viewModal}
+        titleModal={"View Detail Movie"}
         content={
-          <div className="modal-form">
-            <form className="form-style-register">
+          
+          <div className="modal-form-view">
+             <div className="image-view">
+                <img
+                  src={imageNullPath(imgMovie)}
+                  alt={"Imagen de la pelicula"}
+                />
+              </div>
+              <div className="detail-movie">
+              <form className="form-style-register">
               <div className="form">
-                <label htmlFor="email">Enter the name of the movie:</label>
+                <label htmlFor="email">Name of the movie:</label>
                 <input
                   className={
                     ValidateForm(nameFilm) === true && nameFilm === ""
@@ -124,14 +95,12 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                   type="text"
                   name="email"
                   id="email"
+                  disabled
                 />
-                <AlertObligatoryField
-                  controlName={nameFilm}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+              
               </div>
               <div className="form">
-                <label htmlFor="relaseDate">Enter the release date:</label>
+                <label htmlFor="relaseDate">Release date:</label>
                 <input
                   className={
                     ValidateForm(relaseDate) === true && relaseDate === ""
@@ -143,18 +112,17 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                     setRelaseDate(e.target.value);
                     setInvalidForm(ValidateForm(relaseDate));
                   }}
+                  disabled
                   type="date"
                   name="relaseDate"
                   id="relaseDate"
                 />
-                <AlertObligatoryField
-                  controlName={relaseDate}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+              
               </div>
               <div className="form">
-                <label htmlFor="rating">Enter the rating:</label>
+                <label htmlFor="rating">Rating:</label>
                 <input
+                disabled
                   className={
                     ValidateForm(rating) === true && rating === ""
                       ? "border-danger"
@@ -168,14 +136,12 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                   type="number"
                   id="rating"
                 />
-                <AlertObligatoryField
-                  controlName={rating}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+               
               </div>
               <div className="form">
-                <label htmlFor="cast">Enter the cast:</label>
+                <label htmlFor="cast">Cast:</label>
                 <input
+                disabled
                   className={
                     ValidateForm(cast) === true && cast === ""
                       ? "border-danger"
@@ -189,14 +155,12 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                   type="text"
                   id="cast"
                 />
-                <AlertObligatoryField
-                  controlName={cast}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+              
               </div>
               <div className="form">
-                <label htmlFor="genre">Enter the genre:</label>
+                <label htmlFor="genre">Genre:</label>
                 <select
+                disabled
                   name="selectedFruit"
                   value={genre}
                   id="genre"
@@ -206,13 +170,10 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                     <option key={res.id} value={res.id}>{res.name}</option>
                   ))}
                 </select>
-                <AlertObligatoryField
-                  controlName={genre}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+               
               </div>
               <div className="form">
-                <label htmlFor="team">Enter the team:</label>
+                <label htmlFor="team">Team:</label>
                 <textarea
                   className={
                     ValidateForm(team) === true && team === ""
@@ -226,14 +187,12 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                   }}
                   type="text"
                   id="team"
+                  disabled
                 />
-                <AlertObligatoryField
-                  controlName={team}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
+             
               </div>
-              <div className="form">
-                <label htmlFor="image">Enter path image:</label>
+              {/* <div className="form">
+                <label htmlFor="image">Path image:</label>
                 <textarea
                 id="image"
                   className={
@@ -247,37 +206,30 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
                     setInvalidForm(ValidateForm(imgMovie));
                   }}
                   type="text"
+                  disabled
                 />
-                <AlertObligatoryField
-                  controlName={imgMovie}
-                  isInvalidForm={isInvalidForm}
-                ></AlertObligatoryField>
-              </div>
-              <div className="image-view">
-                <img
-                  src={imageNullPath(imgMovie)}
-                  alt={"Imagen de la pelicula"}
-                />
-              </div>
+              
+              </div> */}
+             
             </form>
             <hr></hr>
             <div className="modal-footer">
               <div className="modal-buttons">
-                <button className="btn-edit" onClick={updateMovie}>
-                  Update <i className="fas fa-pencil"></i>
-                </button>
+                
                 <button
                   className="btn-delete"
-                  onClick={(e) => setShowModal(false)}
+                  onClick={(e) => setviewModal(false)}
                 >
                   Cancel <i className="fas fa-xmark"></i>
                 </button>
               </div>
             </div>
+              </div>
+           
           </div>
         }
       />
     </>
   );
 }
-export default FormEditMovie;
+export default FormViewMovie;

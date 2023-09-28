@@ -3,7 +3,7 @@ import Modal from "../../../components/Modal";
 import imageLogo from "../../../assets/img/img-icon.jpg";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-function AlertObligatoryField({ controlName, isInvalidForm }) {
+function AlertObligatoryField({ controlName, isInvalidForm}) {
   return (
     <>
       {isInvalidForm === false && controlName === "" && (
@@ -30,11 +30,11 @@ function imageNullPath(path) {
 
 function validateFormTypeNUmber(controlName) {
   let result = false;
-  controlName === 0 ? (result= true) : (result=false);
+  controlName <= 0? (result= true) : (result=false);
   return result;
 }
 
-function FormNewMovie({setShowModalNew, showModalNew }) {
+function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
   const [isInvalidForm, setInvalidForm] = useState();
 
   //Varibles para los atributos
@@ -63,6 +63,15 @@ function FormNewMovie({setShowModalNew, showModalNew }) {
   };
 
   const createMovie = () => {
+    if(validateFormTypeNUmber(rating) === true){
+      toast.error('Change value rating')
+      return;
+    }
+
+    if(isInvalidForm == true){
+      toast.error('Form is invalid');
+      return;
+    }
     const movie = {};
     movie.title = nameFilm;
     movie.release_date = relaseDate;
@@ -71,7 +80,6 @@ function FormNewMovie({setShowModalNew, showModalNew }) {
     movie.genre = genreArray.filter((res) => res.id == genre)[0];
     movie.team = team;
     movie.preview_image = imgMovie;
-    console.log(movie)
     fetch(`http://localhost:3000/movies/`, {
       method: "POST",
       body: JSON.stringify(movie),
@@ -81,8 +89,8 @@ function FormNewMovie({setShowModalNew, showModalNew }) {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
         toast.success("Create successfully");
+        reqApiMovies();
         setShowModalNew(false);
       });
   };
@@ -144,7 +152,7 @@ function FormNewMovie({setShowModalNew, showModalNew }) {
                 <label htmlFor="rating">Enter the rating:</label>
                 <input
                   className={
-                    (ValidateForm(rating) === true && rating === "" || validateFormTypeNUmber(rating))
+                    (ValidateForm(rating) === true && (rating === "" || validateFormTypeNUmber(rating)))
                       ? "border-danger"
                       : "border-white"
                   }

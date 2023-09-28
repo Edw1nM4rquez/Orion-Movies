@@ -19,11 +19,13 @@
 .title > h3{
     font-size:20px;
     color: var(--white);
+    text-align: center;
 }
 
 .contenCompany > span{
     color: var(--white);
     font-size:15px;
+    text-align: center;
 }
 
 .contenCompany{

@@ -1,36 +1,32 @@
 import "./Card.css";
+import './SkeletonCard.css'
 import LazyLoad from 'react-lazyload';
 import imageLogo from "../assets/img/img-icon.jpg";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function Card({title,imgUrl, genero,openModalView,id}) {
-  const [imagePath , setImagePath] = useState(imgUrl);
-  useEffect(() => {
-    setImagePath(imgUrl);
-  }, [imgUrl]);
+function EskeletonCard() {
 
   return (
     <>
       <div className="card">
         <div className="header-card">
-          <div onClick={(e)=>{openModalView(id)}}>
+          <div>
           <LazyLoad className="img-movie">
             <img 
-              src={imagePath}
+              src={imageLogo}
               alt={"Imagen referring to the movie"}
-              onError={(e)=>{setImagePath(imageLogo)}}
             />
              </LazyLoad>
           </div>
         </div>
-        <h3 className="title-card">{title}</h3>
+        <h3 className="title-card-skeleton">-</h3>
         <div className="genero">
-        <span>{genero}</span>
+        <span className="genre-des title-card-skeleton">-</span>
         </div>
       </div>
     </>
   );
 }
 
-export default Card;
+export default EskeletonCard;

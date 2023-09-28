@@ -5,22 +5,7 @@
       "name": "Nihira",
       "password": "admin",
       "email": "nihiratechiees@gmail.com",
-      "phone": "8989898989",
-      "country": "usa",
-      "address": "",
-      "role": "admin",
-      "gender": "female"
-    },
-    {
-      "id": "ntuser",
-      "name": "Fullname",
-      "password": "ntuser",
-      "email": "email@email.com",
-      "phone": "56778889989",
-      "country": "singapore",
-      "address": "address1\naddrees2",
-      "role": "user",
-      "gender": "male"
+      "phone": "8989898989"
     }
   ],
   "movies": [
@@ -173,25 +158,25 @@
       "rating": 8.3,
       "genre": {
         "id": 11,
-        "name": "Space Adventure"
+        "name": "Science fiction"
       },
       "cast": "Astronaut A. Explorer,Astronaut B. Explorer,Astronaut C. Explorer",
       "team": "Director: Space Adventure Director, Screenwriter: Space Explorer Writer, Producer: Space Adventure Productions",
       "release_date": "2025-01-15",
-      "image_preview": "https://m.media-amazon.com/images/I/51ORKopDhgL._AC_SY580_.jpg"
+      "preview_image": "https://upload.wikimedia.org/wikipedia/en/5/52/Space_adventures_logo-clear.jpg"
     },
     {
-      "title": "Avatar",
-      "release_date": "2023-09-06",
-      "rating": "10",
-      "cast": "Sam Worthington Zoe Saldaña Sigourney Weaver Michelle Rodríguez Stephen Lang Giovanni Ribisi Joel David Moore C. C. H. Pounder Wes Studi Laz Alonso",
+      "title": "EdwinFer",
+      "release_date": "2023-09-07",
+      "rating": "1",
+      "cast": "asd",
       "genre": {
-        "id": 11,
-        "name": "Science fiction"
+        "id": 4,
+        "name": "Comedy"
       },
-      "team": "James Cameron,Jon Landau, Rae Sanchini",
-      "preview_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Avatar-Logo-avatar.svg/300px-Avatar-Logo-avatar.svg.png",
-      "id": 13
+      "team": "asdasd",
+      "preview_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--EUjl2jii--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://i.imgur.com/SNBOoak.png",
+      "id": 14
     }
   ],
   "genre": [

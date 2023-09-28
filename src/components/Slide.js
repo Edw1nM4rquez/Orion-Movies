@@ -1,59 +1,49 @@
-
+import { useState } from "react";
 import "./Slide.css";
+import { useEffect } from "react";
 function CategoryFilter({
   filterCategoryData,
   nameGenderUse,
   setNameGenderUse,
 }) {
   //const [optionRadio, setOptionRadio] = useState('');
+  const [genreArray, setGenreArray] = useState([]);
+
+  const reqApiGenre = async () => {
+    const api = await fetch("http://localhost:3000/genre/");
+    const genres = await api.json();
+    setGenreArray(genres);
+  };
+
+  useEffect(() => {
+    reqApiGenre();
+  }, []);
+
 
   return (
     <>
       <div className="category-filter">
         <h3>Filter Gender</h3>
-        <div className="form-radio">
-          <input
-            type="radio"
-            id="adventure"
-            onChange={(e) => {
-              setNameGenderUse(e.target.value);
-              filterCategoryData(e.target.value);
-            }}
-            value="Adventure"
-            checked={
-              nameGenderUse === "Adventure" && nameGenderUse === "Adventure"
-            }
-          />
-          <label htmlFor="adventure">Adventure</label>
+        <div className="category-container">
+        {genreArray.map((genre) => (
+          <div className="form-radio" key={genre.id}>
+            <input
+              type="radio"
+              id={genre.name}
+              onChange={(e) => {
+                setNameGenderUse(e.target.value);
+                filterCategoryData(e.target.value);
+              }}
+              value={genre.name}
+              checked={
+                nameGenderUse === genre.name && nameGenderUse === genre.name
+              }
+            />
+            <label htmlFor={genre.name}>{genre.name}</label>
+          </div>
+        ))}
         </div>
-        <div className="form-radio">
-          <input
-            type="radio"
-            id="romance"
-            name="romance"
-            value="Romance"
-            onChange={(e) => {
-              setNameGenderUse(e.target.value);
-              filterCategoryData(e.target.value);
-            }}
-            checked={nameGenderUse === "Romance"}
-          />
-          <label htmlFor="romance">Romance</label>
-        </div>
-        <div className="form-radio">
-          <input
-            type="radio"
-            id="mistery"
-            name="mistery"
-            value="Mystery"
-            onChange={(e) => {
-              setNameGenderUse(e.target.value);
-              filterCategoryData(e.target.value);
-            }}
-            checked={nameGenderUse === "Mystery"}
-          />
-          <label htmlFor="mistery">Mystery</label>
-        </div>
+       
       </div>
     </>
   );

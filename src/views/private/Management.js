@@ -36,14 +36,14 @@ const [showModalEdit, setShowModalEdit] = useState(false);
 const [showModalNew, setShowModalNew] = useState(false);
 
 
-  const reqApi = async () => {
+  const reqApiMovies = async () => {
     const api = await fetch("http://localhost:3000/movies/");
     const characterApi = await api.json();
     setDataMovie(sortArray(characterApi));
   };
 
   useEffect(() => {
-    reqApi();
+    reqApiMovies();
   }, []);
 
   
@@ -63,15 +63,18 @@ const [showModalNew, setShowModalNew] = useState(false);
 {showModalNew &&  <FormNewMovie
        setShowModalNew={setShowModalNew}
        showModalNew = {showModalNew}
+       reqApiMovies={reqApiMovies}
        ></FormNewMovie>}
 
 
-        <h2>Film management</h2>
+        <h2>Movie management</h2>
         <div className="button-new-movie"> <button className="login-button" onClick={(e)=> setShowModalNew(true)}>New movie <i className="fas fa-plus"></i></button></div>
        <TableMovie 
        dataMovie={dataMovie}
        setMovieObject={setMovieObject}
        setShowModal={setShowModalEdit}
+       setDataMovie={setDataMovie}
+       reqApiMovies={reqApiMovies}
        ></TableMovie>
       </div>
     </>

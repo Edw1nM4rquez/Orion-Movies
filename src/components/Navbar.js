@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from './button';
 import './Navbar.css';
-
+import { isAuthenticated } from '../core/Authentication';
 
 function Navbar() {
+    const usenavigate = useNavigate();
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -42,20 +43,15 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
-                                Trailers
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/products" className="nav-links" onClick={closeMobileMenu}>
+                            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
                                 About Us
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        {isAuthenticated() == true && <li className="nav-item">
                             <Link to="/admin" className="nav-links" onClick={closeMobileMenu}>
                                 Admin User
                             </Link>
-                        </li>
+                        </li>}
                         <li className="nav-item">
                             <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
                                 Sign Up
@@ -63,11 +59,13 @@ function Navbar() {
                         </li>
                        
                     </ul>
-                    <div className="buttons-interaction">
+                   { isAuthenticated() !== true && <div className="buttons-interaction">
                     {button && <Button buttonStyle='btn--outline' urlNavigate={'/sign-up'} >Sign Up</Button>}
                     {button && <Button buttonStyle='btn--outline' urlNavigate={'/login'} >Login</Button>}
-                    
-                    </div>
+                    </div>}
+                    { isAuthenticated() === true && <div className="buttons-interaction">
+                    {button && <Button buttonStyle='btn--outline' onClick={(e)=> {sessionStorage.clear(); usenavigate('/')}} >Log out <i className='fas fa-right-from-bracket'></i></Button>}
+                    </div>}
                     
                 </div>
             </nav>

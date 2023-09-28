@@ -31,8 +31,8 @@
 
 @media  (max-width: 1300px){
     .card{
-        width: 25vh;
-        height: 35vh; 
+        width: 23vh;
+        height: 40vh; 
     }
     .img-movie > img{
         width: auto;

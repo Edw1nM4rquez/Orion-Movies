@@ -1,0 +1,21 @@
+.title-card-skeleton{
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-size: 20px;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 85%;
+     
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  
+  

@@ -1,4 +1,13 @@
-.category-filter > .form-radio{
+.form-radio{
     margin: 1em;
     
+}
+@media (max-width: 1300px) {
+    .category-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .form-radio{
+        margin: 0.5em;
+    }
 }
