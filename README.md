@@ -10,7 +10,7 @@ Contains search filters, pagination, responsive design. With the representative 
 
 Dividing the project based on components is another way that can be structured. In this case, we will put all the files related to a component together in a folder with the name of the component.
 
-<img src="/src/assets/img-report/structure.png" style="width:700px; height:auto; text-aling:center" />
+<img src="/src/assets/img-report/structure.png" style="width:200px; height:auto; text-aling:center" />
 
 ## Get started 🚀
 
