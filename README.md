@@ -4,6 +4,12 @@ It is an interactive platform, where you can see the premieres of movies that yo
 
 Contains search filters, pagination, responsive design. With the representative color palette from https://www.oriongovernance.com/.
 
+## Justification
+
+In order to solve the exercise, the systems administration part was taken into account. Therefore, a private part of the system and a public part are proposed. 
+Within the private part, we would generate the components (protected), following the security concepts. So that a user with authentication can make changes within the system. With it fulfilling the points of: creation, edition, elimination of a movie in the database.
+All users can see the details of the movies, and the movies are listed in order of genre and alphabetical order.  
+
 ## Structure
 
 - Division by components
