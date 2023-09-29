@@ -1,13 +1,19 @@
 .principal-title {
     text-align: center;
-    font-size: 18px;
-    margin: 1em;
-    color: var(--awb-custom_color_transparent);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    height: 20vh;
+    background-color: var(--awb-custom_color_2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content-movies {
     display: flex;
     flex-wrap: wrap;
+    place-content: center;
 }
 
 .containerHome {
@@ -61,7 +67,7 @@
     }
 
     .web-view-movies {
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
 
@@ -74,7 +80,7 @@
     }
 }
 
-.pagination-f{
+.pagination-footer{
     width: 100%;
     display: flex;
     place-content: center;

@@ -1,11 +1,9 @@
 import './Chip.css';
-function Chip({buttonName, setNameGenderUse,setauxData,dataMovies}){
-
+function Chip({buttonName, setNameGenreUse,setauxDataMovie,dataMovies}){
     const handleClick = () => {
-        setNameGenderUse('');
-        setauxData(dataMovies);
+        setNameGenreUse('');
+        setauxDataMovie(dataMovies);
     }
-
     return(
         <>
         <div className="chip">

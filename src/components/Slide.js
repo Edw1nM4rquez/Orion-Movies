@@ -1,14 +1,23 @@
 import { useState } from "react";
 import "./Slide.css";
 import { useEffect } from "react";
+
+/**
+ * Function that shows us the categories or genres
+ * Dynamically list existing genres
+ * @param {*} param0 
+ * @returns 
+ */
 function CategoryFilter({
   filterCategoryData,
   nameGenderUse,
   setNameGenderUse,
 }) {
-  //const [optionRadio, setOptionRadio] = useState('');
   const [genreArray, setGenreArray] = useState([]);
 
+  /**
+   * Get the genres
+   */
   const reqApiGenre = async () => {
     const api = await fetch("http://localhost:3000/genre/");
     const genres = await api.json();
@@ -19,45 +28,48 @@ function CategoryFilter({
     reqApiGenre();
   }, []);
 
-
   return (
     <>
       <div className="category-filter">
         <h3>Filter Gender</h3>
         <div className="category-container">
-        {genreArray.map((genre) => (
-          <div className="form-radio" key={genre.id}>
-            <input
-              type="radio"
-              id={genre.name}
-              onChange={(e) => {
-                setNameGenderUse(e.target.value);
-                filterCategoryData(e.target.value);
-              }}
-              value={genre.name}
-              checked={
-                nameGenderUse === genre.name && nameGenderUse === genre.name
-              }
-            />
-            <label htmlFor={genre.name}>{genre.name}</label>
-          </div>
-        ))}
+          {genreArray.map((genre) => (
+            <div className="form-radio" key={genre.id}>
+              <input
+                type="radio"
+                id={genre.name}
+                onChange={(e) => {
+                  setNameGenderUse(e.target.value);
+                  filterCategoryData(e.target.value);
+                }}
+                value={genre.name}
+                checked={
+                  nameGenderUse === genre.name && nameGenderUse === genre.name
+                }
+              />
+              <label htmlFor={genre.name}>{genre.name}</label>
+            </div>
+          ))}
         </div>
-       
       </div>
     </>
   );
 }
 
+/**
+ * Function to show movie genres and create an entry to search for movies by name
+ * @param {*} param0 
+ * @returns 
+ */
 function SlideInputSearch({
-  setSearch,
-  search,
-  setauxData,
+  setSearchName,
+  searchName,
+  setauxDataMovie,
   dataMovies,
   filterData,
   filterCategoryData,
   nameGenderUse,
-  setNameGenderUse,
+  setNameGenreUse,
 }) {
   return (
     <>
@@ -66,12 +78,12 @@ function SlideInputSearch({
         <input
           type="text"
           className="inputText"
-          value={search}
+          value={searchName}
           placeholder="Enter the name"
           onChange={(e) => {
-            setSearch(e.target.value);
+            setSearchName(e.target.value);
             if (e.target.value === "") {
-              setauxData(dataMovies);
+              setauxDataMovie(dataMovies);
             }
           }}
         ></input>
@@ -84,7 +96,7 @@ function SlideInputSearch({
         <CategoryFilter
           filterCategoryData={filterCategoryData}
           nameGenderUse={nameGenderUse}
-          setNameGenderUse={setNameGenderUse}
+          setNameGenderUse={setNameGenreUse}
         ></CategoryFilter>
       </div>
     </>

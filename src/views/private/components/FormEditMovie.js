@@ -3,6 +3,12 @@ import Modal from "../../../components/Modal";
 import imageLogo from "../../../assets/img/img-icon.jpg";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+
+/**
+ * Function by render errors, alerts
+ * @param {*} param0
+ * @returns
+ */
 function AlertObligatoryField({ controlName, isInvalidForm }) {
   return (
     <>
@@ -13,6 +19,11 @@ function AlertObligatoryField({ controlName, isInvalidForm }) {
   );
 }
 
+/**
+ * Function to validate if the form data is filled out
+ * @param {*} controlName
+ * @returns
+ */
 function ValidateForm(controlName) {
   let result = false;
   controlName === "" || controlName === null
@@ -21,19 +32,34 @@ function ValidateForm(controlName) {
   return result;
 }
 
-function imageNullPath(path) {
+/**
+ * Function to know if an image is null and send a default image
+ * @param {*} path
+ * @returns
+ */
+function replaceImageNullPath(path) {
   if (path === "" || path === null) {
     path = imageLogo;
   }
   return path;
 }
 
+/**
+ * Validate input type number
+ * @param {*} controlName
+ * @returns
+ */
 function validateFormTypeNUmber(controlName) {
   let result = false;
   controlName <= 0? (result= true) : (result=false);
   return result;
 }
 
+/**
+ * Function where the variables and data are defined to edit the movie
+ * @param {*} param0
+ * @returns
+ */
 function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
   const [isInvalidForm, setInvalidForm] = useState();
 
@@ -52,6 +78,9 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
 
   const [genreArray, setGenreArray] = useState([]);
 
+  /**
+   * Get data genre
+   */
   const reqApi = async () => {
     const api = await fetch("http://localhost:3000/genre/");
     const genres = await api.json();
@@ -62,12 +91,18 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
     reqApi();
   }, []);
 
+  /**
+   * Close modal new
+   */
   const closeModal = () => {
     setShowModal(false);
   };
 
+   /**
+   * Function to create the movie and validate if the fields are filled
+   * @returns
+   */
   const updateMovie = () => {
-
     if(validateFormTypeNUmber(rating) === true){
       toast.error('Change value rating')
       return;
@@ -255,7 +290,7 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
               </div>
               <div className="image-view">
                 <img
-                  src={imageNullPath(imgMovie)}
+                  src={replaceImageNullPath(imgMovie)}
                   alt={"Imagen de la pelicula"}
                 />
               </div>

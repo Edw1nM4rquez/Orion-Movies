@@ -1,11 +1,18 @@
 {
   "users": [
     {
-      "id": "adminuser",
+      "id": "admin",
       "name": "Nihira",
       "password": "admin",
       "email": "nihiratechiees@gmail.com",
       "phone": "8989898989"
+    },
+    {
+      "id": "Josea",
+      "name": "JOse peres",
+      "password": "edwin2019",
+      "email": "jose@ups.ed",
+      "phone": "09654654655"
     }
   ],
   "movies": [

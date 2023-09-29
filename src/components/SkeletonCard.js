@@ -2,11 +2,12 @@ import "./Card.css";
 import './SkeletonCard.css'
 import LazyLoad from 'react-lazyload';
 import imageLogo from "../assets/img/img-icon.jpg";
-import { useState } from "react";
-import { useEffect } from "react";
 
-function EskeletonCard() {
-
+/**
+ * Function render Skeleton
+ * @returns 
+ */
+function SkeletonCard() {
   return (
     <>
       <div className="card">
@@ -29,4 +30,4 @@ function EskeletonCard() {
   );
 }
 
-export default EskeletonCard;
+export default SkeletonCard;

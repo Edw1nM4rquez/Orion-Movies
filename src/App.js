@@ -10,8 +10,13 @@ import {
 import routesPublic from "./views/public/Routes";
 import routesPrivate from "./views/private/routes";
 import { isAuthenticated } from "./core/Authentication";
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
+/**
+ * Function to protect routes, login required
+ * @param {*} param0 
+ * @returns 
+ */
 const ProtectedRoute = ({ canActivate, redirectPath = "/" }) => {
   if (!canActivate) {
     return <Navigate to={redirectPath} replace />;
@@ -19,10 +24,14 @@ const ProtectedRoute = ({ canActivate, redirectPath = "/" }) => {
   return <Outlet />;
 };
 
+/**
+ * App root
+ * @returns 
+ */
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/">
         <Navbar />
         <div style={{ background: "white" }}>
           <Routes>

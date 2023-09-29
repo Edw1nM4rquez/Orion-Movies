@@ -1,6 +1,18 @@
+import { useMemo } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import Pagination from "../../../assets/js/Pagination";
+import './TableMovie.css'
 
+/**
+ * Function Table
+ */
 function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
+
+  /**
+   * Get movie data by id
+   * @param {*} id 
+   */
   const openModal = (id) => {
     const getMovieById = async () => {
       const apiMovie = await fetch("http://localhost:3000/movies/" + id);
@@ -11,6 +23,10 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
     getMovieById();
   };
 
+  /**
+   * delete movie
+   * @param {*} id 
+   */
   const deleteMovie = (id) => {
     fetch(`http://localhost:3000/movies/${id}`, {
       method: "DELETE",
@@ -26,6 +42,16 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
         setShowModal(false);
       });
   };
+
+  
+  let PageSize = 8;
+  const [currentPage, setCurrentPage] = useState(1);
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return dataMovie.slice(firstPageIndex, lastPageIndex);
+  }, [PageSize, dataMovie, currentPage]);
+
   return (
     <>
       <table className="table">
@@ -43,7 +69,7 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
           </tr>
         </thead>
         <tbody className="table-body">
-          {dataMovie.map((item) => (
+          {currentTableData.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.title}</td>
@@ -74,6 +100,17 @@ function TableMovie({ dataMovie, setMovieObject, setShowModal, reqApiMovies }) {
           ))}
         </tbody>
       </table>
+      <div className="pagination-footer">
+            <Pagination
+              className="pagination-bar"
+              currentPage={currentPage}
+              totalCount={dataMovie.length}
+              pageSize={PageSize}
+              onPageChange={(page) => {
+                setCurrentPage(page);
+              }}
+            />
+          </div>
     </>
   );
 }

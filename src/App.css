@@ -15,6 +15,7 @@ body{
 :root{
   --awb-custom_color: #103c6b;
   --awb-custom_color_transparent: #103c6b9c;
+  --awb-custom_color_2: #370665;
   font-family: 'PT Serif', serif;
 }
 

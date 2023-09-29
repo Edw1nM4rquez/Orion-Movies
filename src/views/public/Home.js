@@ -8,6 +8,10 @@ import Pagination from "../../assets/js/Pagination";
 import EskeletonCard from "../../components/SkeletonCard";
 import FormViewMovie from "./components/FormViewMovie";
 
+/**
+ * Create header home
+ * @returns 
+ */
 function HeaderHome() {
   return (
     <div className="principal-title">
@@ -16,9 +20,13 @@ function HeaderHome() {
   );
 }
 
+/**
+ * Function to sort the data, by gender and alphabetical order
+ * @param {*} arr 
+ * @returns 
+ */
 function sortArray(arr) {
   arr.sort((a, b) => {
-    // Compara por género primero
     if (a.genre.name < b.genre.name) {
       return -1;
     }
@@ -27,66 +35,86 @@ function sortArray(arr) {
     }
 
     if (a.title < b.title) {
-      return -1; // a debería venir antes que b en el orden alfabético
+      return -1;
     }
     if (a.title > b.title) {
-      return 1; // b debería venir antes que a en el orden alfabético
+      return 1;
     }
-    return 0; // a y b son iguales en términos de orden alfabético
+    return 0;
   });
 
   return arr;
 }
 
+/**
+ * load image sequentially
+ * @param {*} path 
+ * @returns 
+ */
 function reloadDataImage(path) {
   let newPath = path + `?timestamp=${new Date().getTime()}`;
   return newPath;
 }
 
+/**
+ * Design root function
+ * @returns 
+ */
 function Home() {
-  let PageSize = 8;
-
   const [dataMovies, setData] = useState([]);
-  const [auxData, setauxData] = useState([]);
-  const [search, setSearch] = useState("");
-  const [nameGenderUse, setNameGenderUse] = useState("");
-
+  const [auxDataMovie, setauxDataMovie] = useState([]);
+  const [searchName, setSearchName] = useState("");
+  const [nameGenreUse, setNameGenreUse] = useState("");
   const [showViewModal, setViewModal] = useState(false);
   const [movieObject, setMovieObject] = useState({});
 
-  const reqApi = async () => {
+  /**
+   * get date movies
+   */
+  const getMoviesDataApi = async () => {
     const api = await fetch("http://localhost:3000/movies/");
     const characterApi = await api.json();
     setData(sortArray(characterApi));
-    setauxData(characterApi);
+    setauxDataMovie(characterApi);
   };
 
+  /**
+   * filter by name movie 
+   * @returns 
+   */
   const filterData = () => {
-    setauxData(dataMovies);
     let newFilterData = dataMovies.filter(
-      (res) => res.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      (res) => res.title.toLowerCase().indexOf(searchName.toLowerCase()) !== -1
     );
     if (newFilterData.length === 0) {
       toast.error("No name matches");
-      setauxData(dataMovies);
+      setauxDataMovie(dataMovies);
       return;
     }
-    setauxData(newFilterData);
+    setauxDataMovie(newFilterData);
   };
 
+  /**
+   * Filter by category or genre
+   * @param {*} genre  //id of the selected genre
+   */
   const filterCategoryData = (genre) => {
-    setNameGenderUse(genre);
-    setauxData(dataMovies);
+    setNameGenreUse(genre);
+    setauxDataMovie(dataMovies);
     let newFilterData = dataMovies.filter(
       (res) => res.genre.name.indexOf(genre) !== -1
     );
-    setauxData(newFilterData);
+    setauxDataMovie(newFilterData);
   };
 
   useEffect(() => {
-    reqApi();
+    getMoviesDataApi();
   }, []);
 
+  /**
+   * Open movie information view modal for the user 
+   * @param {*} id 
+   */
   const openModalView = (id) => {
     const getMovieById = async () => {
       const apiMovie = await fetch("http://localhost:3000/movies/" + id);
@@ -97,54 +125,58 @@ function Home() {
     getMovieById();
   };
 
+  /**
+   * Variables and function for pagination
+   */
+  let PageSize = 8;
   const [currentPage, setCurrentPage] = useState(1);
-
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return auxData.slice(firstPageIndex, lastPageIndex);
-  }, [PageSize, auxData, currentPage]);
+    return auxDataMovie.slice(firstPageIndex, lastPageIndex);
+  }, [PageSize, auxDataMovie, currentPage]);
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
       {showViewModal && (
-              <FormViewMovie
-                characterApiMovie={movieObject}
-                setviewModal={setViewModal}
-                viewModal={showViewModal}
-              ></FormViewMovie>
-            )}
-            
+        <FormViewMovie
+          characterApiMovie={movieObject}
+          setviewModal={setViewModal}
+          viewModal={showViewModal}
+        ></FormViewMovie>
+      )}
+
       <HeaderHome></HeaderHome>
       <div className="containerHome">
         <div className="web-view-movies">
           <Slide
-            setSearch={setSearch}
-            search={search}
-            setauxData={setauxData}
+            setSearchName={setSearchName}
+            searchName={searchName}
+            setauxDataMovie={setauxDataMovie}
             dataMovies={dataMovies}
             filterCategoryData={filterCategoryData}
             filterData={filterData}
-            nameGenderUse={nameGenderUse}
-            setNameGenderUse={setNameGenderUse}
+            nameGenreUse={nameGenreUse}
+            setNameGenreUse={setNameGenreUse}
           ></Slide>
         </div>
         <div className="movies">
           <div className="container-chip">
-            {nameGenderUse !== "" && (
+            {nameGenreUse !== "" && (
               <Chip
-                buttonName={nameGenderUse}
-                setNameGenderUse={setNameGenderUse}
-                setauxData={setauxData}
+                buttonName={nameGenreUse}
+                setNameGenreUse={setNameGenreUse}
+                setauxDataMovie={setauxDataMovie}
                 dataMovies={dataMovies}
               ></Chip>
             )}
           </div>
-          <div className="pagination-f">
+          <div className="pagination-footer">
             <Pagination
               className="pagination-bar"
               currentPage={currentPage}
-              totalCount={auxData.length}
+              totalCount={auxDataMovie.length}
               pageSize={PageSize}
               onPageChange={(page) => {
                 setCurrentPage(page);
@@ -165,13 +197,12 @@ function Home() {
                 id={item.id}
               ></Card>
             ))}
-           
           </div>
-          <div className="pagination-f">
+          <div className="pagination-footer">
             <Pagination
               className="pagination-bar"
               currentPage={currentPage}
-              totalCount={auxData.length}
+              totalCount={auxDataMovie.length}
               pageSize={PageSize}
               onPageChange={(page) => {
                 setCurrentPage(page);

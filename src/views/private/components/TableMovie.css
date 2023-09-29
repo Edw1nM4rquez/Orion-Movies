@@ -1,0 +1,18 @@
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .table th, .table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .table th {
+      text-align: center;
+      font-weight: bold;
+    }
+  
+    .table td {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }

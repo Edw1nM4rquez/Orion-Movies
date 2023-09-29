@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Login.css";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
+/**
+ * Function to validate the data entered in the form
+ * @param {*} username 
+ * @param {*} password 
+ * @returns 
+ */
 function ValidateForm(username, password) {
   let result = true;
   if (username === "" || username === null) {
@@ -16,6 +21,10 @@ function ValidateForm(username, password) {
   return result;
 }
 
+/**
+ * Function where the header is defined
+ * @returns 
+ */
 function HeaderLogin() {
   return (
     <>
@@ -28,13 +37,11 @@ function HeaderLogin() {
 }
 
 function Login() {
-  const usenavigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isInvalidForm, setInvalidForm] = useState();
 
   useEffect(() => {
-    if (isInvalidForm) {
       if (isInvalidForm) {
         fetch("http://localhost:3000/users/" + username)
           .then((res) => {
@@ -49,7 +56,7 @@ function Login() {
                 toast.success("Success");
                 sessionStorage.setItem("username", resp.name);
                 sessionStorage.setItem("userrole", resp.role);
-                usenavigate("/");
+                window.location.href = '/';
               } else {
                 toast.error("Please Enter valid credentials");
               }
@@ -59,9 +66,13 @@ function Login() {
             toast.error("Login Failed due to :" + err.message);
           });
       }
-    }
+    
   }, [isInvalidForm]);
 
+  /**
+   * Function to register user data
+   * @param {*} e 
+   */
   const ProceedLogin = async (e) => {
     console.log(e);
     await setInvalidForm(ValidateForm(username, password));
@@ -76,7 +87,7 @@ function Login() {
           <div className="form-login">
             <form action="" className="form-style">
               <div className="form">
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">Nickname:</label>
                 <input
                   className={
                     isInvalidForm === false && username === ""

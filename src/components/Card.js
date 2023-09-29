@@ -3,6 +3,11 @@ import LazyLoad from 'react-lazyload';
 import imageLogo from "../assets/img/img-icon.jpg";
 import { useState } from "react";
 import { useEffect } from "react";
+/**
+ * Card movie - present information  
+ * @param {*} param0 
+ * @returns 
+ */
 
 function Card({title,imgUrl, genero,openModalView,id}) {
   const [imagePath , setImagePath] = useState(imgUrl);

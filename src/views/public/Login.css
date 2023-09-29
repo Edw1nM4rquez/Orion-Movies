@@ -35,11 +35,11 @@
 
 .form>input {
     text-align: center;
-    height: 25px;
+    height: 30px;
     width: 100%;
-    border: 2px solid var(--awb-custom_color_transparent);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 5px;
+   
 }
 
 .form>select {
@@ -52,7 +52,7 @@
 }
 
 .border-white {
-    border: 2px solid var(--awb-custom_color_transparent) !important;
+    border: 2px solid rgb(85, 85, 85) !important;
 }
 
 .border-danger {
@@ -73,15 +73,22 @@
     border-radius:15px;
     border: 1px solid var(--awb-custom_color);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: var(--awb-custom_color);
+    color: white;
 }
 
 .login-button:hover {
-    background: var(--awb-custom_color_transparent);
-    color: #fff;
+    background:#fff;
+    color: var(--awb-custom_color);
     transition: 250ms;
-    border: 1px solid white;
+    border: 1px solid var(--awb-custom_color);
 }
 
 .button-form{
     text-align: center;
+}
+@media (max-width: 1300px) {
+    .form-login {
+        width: 100%;
+    }
 }

@@ -1,21 +1,47 @@
 .modal-form-view{
     display:grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 50%;
+    
 }
 
-.modal-form-view .image-view{
+.modal-form-view .image-view {
 display: flex;
 justify-content: center;
 align-self: center;
 }
+.image-view-view{
+    height: 80%;
+border: 1px solid var(--awb-custom_color);
+}
 
-.modal-form-view .image-view > img {
-    width: 90%;
-    height: auto;
+.content-view-img{
+text-align: center;
+}
+.modal-form-view .image-view .content-view-img > img {
+    width: auto;
+    height: 39vh;
 }
 
 @media (max-width: 1300px) {
     .modal-form-view{
         grid-template-columns: none;
     }
+    .modal-form-view .image-view > img {
+        width: 25%;
+    }
+    .disabled-img{
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
+.card-height-title{
+    height:8vh;
+}
+.label-description{
+    text-align:center;
+    margin:1em;
+}
+.form-style-register-view{
+    display: block;
 }

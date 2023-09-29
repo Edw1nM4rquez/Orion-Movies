@@ -39,7 +39,7 @@ function FooterInformation() {
 function CopyRight() {
     return (
         <div className="copyright">
-            <span>&copy; Todos los derechos reservados - 2023. </span>
+            <span>&copy; All rights reserved - 2023. </span>
         </div>
     )
 }

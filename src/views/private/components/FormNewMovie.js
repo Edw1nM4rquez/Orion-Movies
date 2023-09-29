@@ -3,7 +3,13 @@ import Modal from "../../../components/Modal";
 import imageLogo from "../../../assets/img/img-icon.jpg";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-function AlertObligatoryField({ controlName, isInvalidForm}) {
+
+/**
+ * Function by render errors, alerts
+ * @param {*} param0
+ * @returns
+ */
+function AlertObligatoryField({ controlName, isInvalidForm }) {
   return (
     <>
       {isInvalidForm === false && controlName === "" && (
@@ -13,6 +19,11 @@ function AlertObligatoryField({ controlName, isInvalidForm}) {
   );
 }
 
+/**
+ * Function to validate if the form data is filled out
+ * @param {*} controlName
+ * @returns
+ */
 function ValidateForm(controlName) {
   let result = false;
   controlName === "" || controlName === null
@@ -21,33 +32,51 @@ function ValidateForm(controlName) {
   return result;
 }
 
-function imageNullPath(path) {
+/**
+ * Function to know if an image is null and send a default image
+ * @param {*} path
+ * @returns
+ */
+function replaceImageNullPath(path) {
   if (path === "" || path === null) {
     path = imageLogo;
   }
   return path;
 }
 
+/**
+ * Validate input type number
+ * @param {*} controlName
+ * @returns
+ */
 function validateFormTypeNUmber(controlName) {
   let result = false;
-  controlName <= 0? (result= true) : (result=false);
+  controlName <= 0 ? (result = true) : (result = false);
   return result;
 }
 
-function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
+/**
+ * Function where the variables and data are defined to create the movie
+ * @param {*} param0
+ * @returns
+ */
+function FormNewMovie({ setShowModalNew, showModalNew, reqApiMovies }) {
   const [isInvalidForm, setInvalidForm] = useState();
 
   //Varibles para los atributos
   const [nameFilm, setNameFilm] = useState("");
-  const [relaseDate, setRelaseDate] = useState( "" );
+  const [relaseDate, setRelaseDate] = useState("");
   const [rating, setRating] = useState(0);
-  const [cast, setCast] = useState( "");
+  const [cast, setCast] = useState("");
   const [genre, setGenre] = useState("");
-  const [team, setTeam] = useState( "");
-  const [imgMovie, setImageMovie] = useState( "");
+  const [team, setTeam] = useState("");
+  const [imgMovie, setImageMovie] = useState("");
 
   const [genreArray, setGenreArray] = useState([]);
 
+  /**
+   * Get data genre
+   */
   const reqApi = async () => {
     const api = await fetch("http://localhost:3000/genre/");
     const genres = await api.json();
@@ -58,18 +87,25 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
     reqApi();
   }, []);
 
+  /**
+   * Close modal new
+   */
   const closeModal = () => {
     setShowModalNew(false);
   };
 
+  /**
+   * Function to create the movie and validate if the fields are filled
+   * @returns
+   */
   const createMovie = () => {
-    if(validateFormTypeNUmber(rating) === true){
-      toast.error('Change value rating')
+    if (validateFormTypeNUmber(rating) === true) {
+      toast.error("Change value rating");
       return;
     }
 
-    if(isInvalidForm == true){
-      toast.error('Form is invalid');
+    if (isInvalidForm == true) {
+      toast.error("Form is invalid");
       return;
     }
     const movie = {};
@@ -152,7 +188,8 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
                 <label htmlFor="rating">Enter the rating:</label>
                 <input
                   className={
-                    (ValidateForm(rating) === true && (rating === "" || validateFormTypeNUmber(rating)))
+                    ValidateForm(rating) === true &&
+                    (rating === "" || validateFormTypeNUmber(rating))
                       ? "border-danger"
                       : "border-white"
                   }
@@ -168,7 +205,11 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
                   controlName={rating}
                   isInvalidForm={isInvalidForm}
                 ></AlertObligatoryField>
-                {validateFormTypeNUmber(rating) && <span style={{color: 'red'}}>Enter a value other than 0</span>}
+                {validateFormTypeNUmber(rating) && (
+                  <span style={{ color: "red" }}>
+                    Enter a value other than 0
+                  </span>
+                )}
               </div>
               <div className="form">
                 <label htmlFor="cast">Enter the cast:</label>
@@ -194,18 +235,20 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
               <div className="form">
                 <label htmlFor="genre">Enter the genre:</label>
                 <select
-                className={
-                  ValidateForm(genre) === true && genre === ""
-                    ? "border-danger"
-                    : "border-white"
-                }
+                  className={
+                    ValidateForm(genre) === true && genre === ""
+                      ? "border-danger"
+                      : "border-white"
+                  }
                   name="selectedFruit"
                   value={genre}
                   id="genre"
                   onChange={(e) => setGenre(e.target.value)}
                 >
                   {genreArray.map((res) => (
-                    <option key={res.id} value={res.id}>{res.name}</option>
+                    <option key={res.id} value={res.id}>
+                      {res.name}
+                    </option>
                   ))}
                 </select>
                 <AlertObligatoryField
@@ -237,7 +280,7 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
               <div className="form">
                 <label htmlFor="image">Enter path image:</label>
                 <textarea
-                id="image"
+                  id="image"
                   className={
                     ValidateForm(imgMovie) === true && imgMovie === ""
                       ? "border-danger"
@@ -257,7 +300,7 @@ function FormNewMovie({setShowModalNew, showModalNew,reqApiMovies }) {
               </div>
               <div className="image-view">
                 <img
-                  src={imageNullPath(imgMovie)}
+                  src={replaceImageNullPath(imgMovie)}
                   alt={"Imagen de la pelicula"}
                 />
               </div>
