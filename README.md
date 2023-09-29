@@ -27,3 +27,5 @@ npm i json-server
 ```
 
 ### Facility 🔧
+
+Once the project has been downloaded to our local computer, we are going to end up in the root directory of the project and install the dependencies. 
