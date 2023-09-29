@@ -5,4 +5,5 @@ Contains search filters, pagination, responsive design. With the representative 
 
 ## Get started 📋 
 Read the step-by-step instructions so you can run the following project locally.
-<img src="/src/assets/img-report/home.png" style="width:200px; height:auto" />
+
+<img src="/src/assets/img-report/home.png" style="width:250px; height:auto" />
