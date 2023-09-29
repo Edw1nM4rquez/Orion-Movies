@@ -29,3 +29,28 @@ npm i json-server
 ### Facility 🔧
 
 Once the project has been downloaded to our local computer, we are going to end up in the root directory of the project and install the dependencies. 
+
+```
+npm install
+```
+
+if it does not work, apply 
+
+```
+npm install --legacy-peer-deps
+```
+
+or force the installation 
+
+```
+npm install --force
+```
+
+- Serving the application
+
+  The application will be executed at the following address http://localhost:3001/.
+
+```
+npm start
+```
+
