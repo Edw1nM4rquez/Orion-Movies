@@ -82,7 +82,7 @@
     display: flex;
 }
 .modal-footer{
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
 }
 

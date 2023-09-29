@@ -108,8 +108,8 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
       return;
     }
 
-    if(isInvalidForm == true){
-      toast.error('Form is invalid');
+    if (nameFilm === '' || relaseDate === '' || rating===0 || cast === '' || genre ==='' || team === '' || imgMovie === '' ) {
+      toast.error("Form is invalid");
       return;
     }
 
@@ -118,7 +118,7 @@ function FormEditMovie({ characterApiMovie, setShowModal, showModal }) {
     movie.release_date = relaseDate;
     movie.rating = rating;
     movie.cast = cast;
-    movie.genre = genreArray.filter((res) => res.id == genre)[0];
+    movie.genre = genreArray.filter((res) => res.id === Number(genre))[0];
     movie.team = team;
     movie.preview_image = imgMovie;
     fetch(`http://localhost:3000/movies/${characterApiMovie.id}`, {

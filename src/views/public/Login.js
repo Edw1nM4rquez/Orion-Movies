@@ -48,7 +48,6 @@ function Login() {
             return res.json();
           })
           .then((resp) => {
-            console.log(resp);
             if (Object.keys(resp).length === 0) {
               toast.error("Please Enter valid username");
             } else {
@@ -67,14 +66,13 @@ function Login() {
           });
       }
     
-  }, [isInvalidForm]);
+  }, [isInvalidForm, password, username]);
 
   /**
    * Function to register user data
    * @param {*} e 
    */
   const ProceedLogin = async (e) => {
-    console.log(e);
     await setInvalidForm(ValidateForm(username, password));
   };
 

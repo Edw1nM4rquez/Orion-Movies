@@ -171,19 +171,6 @@
       "team": "Director: Space Adventure Director, Screenwriter: Space Explorer Writer, Producer: Space Adventure Productions",
       "release_date": "2025-01-15",
       "preview_image": "https://upload.wikimedia.org/wikipedia/en/5/52/Space_adventures_logo-clear.jpg"
-    },
-    {
-      "title": "EdwinFer",
-      "release_date": "2023-09-07",
-      "rating": "1",
-      "cast": "asd",
-      "genre": {
-        "id": 4,
-        "name": "Comedy"
-      },
-      "team": "asdasd",
-      "preview_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--EUjl2jii--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://i.imgur.com/SNBOoak.png",
-      "id": 14
     }
   ],
   "genre": [

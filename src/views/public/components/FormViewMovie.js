@@ -14,14 +14,14 @@ function imageNullPath(path) {
 function FormViewMovie({ characterApiMovie, setviewModal, viewModal }) {
 
   //Varibles para los atributos
-  const [nameFilm, setNameFilm] = useState(characterApiMovie.title || "");
-  const [relaseDate, setRelaseDate] = useState(
+  const [nameFilm] = useState(characterApiMovie.title || "");
+  const [relaseDate] = useState(
     characterApiMovie.release_date || ""
   );
-  const [rating, setRating] = useState(characterApiMovie.rating || 0);
-  const [cast, setCast] = useState(characterApiMovie.cast || "");
-  const [team, setTeam] = useState(characterApiMovie.team || "");
-  const [imgMovie, setImageMovie] = useState(
+  const [rating] = useState(characterApiMovie.rating || 0);
+  const [cast] = useState(characterApiMovie.cast || "");
+  const [team] = useState(characterApiMovie.team || "");
+  const [imgMovie] = useState(
     characterApiMovie.preview_image || ""
   );
 
