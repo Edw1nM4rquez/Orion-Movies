@@ -8,8 +8,6 @@ Contains search filters, pagination, responsive design. With the representative 
 
 Read the step-by-step instructions so you can run the following project locally.
 
-<img src="/src/assets/img-report/home.png" style="width:700px; height:auto; text-aling:center" />
-
 ### Pre requirements 📋
 
 - Node JS y npm
@@ -61,3 +59,23 @@ In the root directory we open a new terminal, and execute the following command.
 ```
 json-server --watch src/assets/db.json
 ```
+
+## Welcome to Orion Movies - Orion Movies
+
+<img src="/src/assets/img-report/home.png" style="width:700px; height:auto; text-aling:center" />
+
+- What it contains 📦
+  
+- Filters  
+
+<img src="/src/assets/img-report/filters.png" style="width:700px; height:auto; text-aling:center" />
+
+- Movie details 
+
+<img src="/src/assets/img-report/detailmovie.png" style="width:700px; height:auto; text-aling:center" />
+
+- Movies administration 
+<img src="/src/assets/img-report/adminuser.png" style="width:700px; height:auto; text-aling:center" />
+- Login
+
+- Register
