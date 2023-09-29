@@ -14,7 +14,7 @@ Dividing the project based on components is another way that can be structured. 
 
 ## Performance testing
 
-<img src="/src/assets/img-report/test" style="width:500px; height:auto; text-aling:center" />
+<img src="/src/assets/img-report/test.png" style="width:500px; height:auto; text-aling:center" />
 
 ## Get started 🚀
 
