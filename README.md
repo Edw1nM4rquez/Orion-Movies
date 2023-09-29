@@ -8,7 +8,7 @@ Contains search filters, pagination, responsive design. With the representative 
 
 Read the step-by-step instructions so you can run the following project locally.
 
-<img src="/src/assets/img-report/home.png" style="width:500px; height:auto" />
+<img src="/src/assets/img-report/home.png" style="width:700px; height:auto; text-aling:center" />
 
 ### Pre requirements 📋
 
