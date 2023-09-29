@@ -24,6 +24,7 @@
 
 .img-movie {
     text-align: center;
+    aspect-ratio: 16 / 9;
 }
 
 .img-movie>img {
