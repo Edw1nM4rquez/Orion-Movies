@@ -79,3 +79,17 @@ json-server --watch src/assets/db.json
 - Login
 
 - Register
+
+- If you wish you can register inside the application, otherwise use the default credentials registered for this example.📝
+
+Nickname
+
+```
+admin
+```
+
+Password
+
+```
+admin
+```
