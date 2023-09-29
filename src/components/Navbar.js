@@ -86,7 +86,6 @@ function Navbar() {
               <li className="nav-item">
                 <Link
                   className="nav-links-mobile"
-                  buttonStyle="btn--outline"
                   onClick={(e) => {
                     sessionStorage.clear();
                     window.location.reload(false);

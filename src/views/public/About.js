@@ -25,7 +25,7 @@ function About() {
         </div>
       </div>
       <div className="banner-end">
-          <h3><a href="/">Review Content, select here !! <i classNames="fas fa-hand-pointer"></i></a></h3>
+          <h3><a href="/">Review Content, select here !! <i className="fas fa-hand-pointer"></i></a></h3>
       </div>
     </>
   );

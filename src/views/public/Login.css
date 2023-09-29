@@ -44,15 +44,15 @@
 
 .form>select {
     text-align: center;
-    height: 25px;
+    height: 35px;
     width: 100%;
-    border: 2px solid var(--awb-custom_color_transparent);
+    border: 2px solid  var(--awb-custom_color_2);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 5px;
 }
 
 .border-white {
-    border: 2px solid rgb(85, 85, 85) !important;
+    border: 2px solid var(--awb-custom_color_2) !important;
 }
 
 .border-danger {
