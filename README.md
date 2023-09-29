@@ -4,6 +4,12 @@ It is an interactive platform, where you can see the premieres of movies that yo
 
 Contains search filters, pagination, responsive design. With the representative color palette from https://www.oriongovernance.com/.
 
+## Justification
+
+In order to solve the exercise, the systems administration part was taken into account. Therefore, a private part of the system and a public part are proposed. 
+Within the private part, we would generate the components (protected), following the security concepts. So that a user with authentication can make changes within the system. With it fulfilling the points of: creation, edition, elimination of a movie in the database.
+All users can see the details of the movies, and the movies are listed in order of genre and alphabetical order.  
+
 ## Structure
 
 - Division by components
@@ -11,6 +17,10 @@ Contains search filters, pagination, responsive design. With the representative 
 Dividing the project based on components is another way that can be structured. In this case, we will put all the files related to a component together in a folder with the name of the component.
 
 <img src="/src/assets/img-report/structure.png" style="width:100px; height:auto; text-aling:center" />
+
+## Performance testing
+
+<img src="/src/assets/img-report/test.png" style="width:500px; height:auto; text-aling:center" />
 
 ## Get started 🚀
 
