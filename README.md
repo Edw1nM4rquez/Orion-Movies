@@ -54,3 +54,10 @@ npm install --force
 npm start
 ```
 
+- Run fake api
+
+In the root directory we open a new terminal, and execute the following command. To run the server in this case (json-server)
+  
+```
+json-server --watch src/assets/db.json
+```
