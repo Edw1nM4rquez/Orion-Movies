@@ -10,7 +10,7 @@ Read the step-by-step instructions so you can run the following project locally.
 
 <img src="/src/assets/img-report/home.png" style="width:500px; height:auto" />
 
-### Pre-requisitos 📋
+### Pre requirements 📋
 
 - Node JS y npm
 
@@ -18,6 +18,6 @@ Read the step-by-step instructions so you can run the following project locally.
 
 - React
 
- <a href="https://es.react.dev/">React</a>
+  <a href="https://es.react.dev/">React</a>
 
-### Instalación 🔧
+### Facility 🔧
