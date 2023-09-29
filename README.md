@@ -20,4 +20,10 @@ Read the step-by-step instructions so you can run the following project locally.
 
   <a href="https://es.react.dev/">React</a>
 
+- Json Server
+
+```
+npm i json-server
+```
+
 ### Facility 🔧
