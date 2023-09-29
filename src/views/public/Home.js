@@ -27,20 +27,20 @@ function HeaderHome() {
  */
 function sortArray(arr) {
   arr.sort((a, b) => {
-    if (a.genre.name < b.genre.name) {
-      return -1;
-    }
-    if (a.genre.name > b.genre.name) {
-      return 1;
-    }
+    
+  const nameOne = a.title.toLowerCase();
+  const nameTwo = b.title.toLowerCase();
+  if (nameOne < nameTwo) return -1;
+  if (nameOne > nameTwo) return 1;
 
-    if (a.title < b.title) {
-      return -1;
-    }
-    if (a.title > b.title) {
-      return 1;
-    }
+  const genreOne = a.genre.name.toLowerCase();
+  const genreTwo = b.genre.name.toLowerCase();
+  if (genreOne < genreTwo) return -1;
+  if (genreOne > genreTwo) return 1;
+  
     return 0;
+
+    
   });
 
   return arr;
