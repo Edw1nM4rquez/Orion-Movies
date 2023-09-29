@@ -68,7 +68,7 @@ json-server --watch src/assets/db.json
   
 - Filters  
 
-<img src="/src/assets/img-report/filters.png" style="width:700px; height:auto; text-aling:center" />
+<img src="/src/assets/img-report/filters.png" style="width:400px; height:auto; text-aling:center" />
 
 - Movie details 
 
