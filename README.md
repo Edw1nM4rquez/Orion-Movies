@@ -4,6 +4,14 @@ It is an interactive platform, where you can see the premieres of movies that yo
 
 Contains search filters, pagination, responsive design. With the representative color palette from https://www.oriongovernance.com/.
 
+## Structure
+
+- Division by components
+
+Dividing the project based on components is another way that can be structured. In this case, we will put all the files related to a component together in a folder with the name of the component.
+
+<img src="/src/assets/img-report/structure.png" style="width:700px; height:auto; text-aling:center" />
+
 ## Get started 🚀
 
 Read the step-by-step instructions so you can run the following project locally.
