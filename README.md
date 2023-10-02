@@ -42,6 +42,10 @@ Read the step-by-step instructions so you can run the following project locally.
 npm i json-server
 ```
 
+```
+npm install -g json-server
+```
+
 ### Facility 🔧
 
 ```
