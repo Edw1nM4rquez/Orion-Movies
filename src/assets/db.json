@@ -13,6 +13,20 @@
       "password": "edwin2019",
       "email": "jose@ups.ed",
       "phone": "09654654655"
+    },
+    {
+      "id": "Edwin1",
+      "name": "Fenrnando",
+      "password": "Edwin",
+      "email": "emarq@ups.edu.ce",
+      "phone": "0983535"
+    },
+    {
+      "id": "Jose",
+      "name": "Jose",
+      "password": "Jose",
+      "email": "jsoe@ups.edu.ec",
+      "phone": "123123"
     }
   ],
   "movies": [

@@ -77,7 +77,7 @@ function SingUp() {
    * @param {*} e 
    */
   const ProceedRegister = async (e) => {
-    if (isInvalidForm && isInvalidForm !== undefined) {
+    if (!isInvalidForm && isInvalidForm !== undefined) {
       let user = {};
       user.id = nickname;
       user.name = username;

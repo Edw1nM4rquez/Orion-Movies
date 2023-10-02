@@ -19,3 +19,18 @@ body{
   font-family: 'PT Serif', serif;
 }
 
+.NotFound{
+  text-align: center;
+  display: flex;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  
+}
+.NotFound h2{
+  font-size: 4em;
+}
+
+.NotFound i{
+  font-size: 10em;
+} 
