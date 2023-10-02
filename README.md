@@ -42,6 +42,8 @@ Read the step-by-step instructions so you can run the following project locally.
 npm i json-server
 ```
 
+- If it is not recognized as an internal or external command .  Installing Json Serve globally 
+
 ```
 npm install -g json-server
 ```
